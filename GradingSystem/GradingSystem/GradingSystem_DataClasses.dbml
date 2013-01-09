@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="GradingSystem" Class="GradingSystem_DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=PETER-PC\SQLEXPRESS;Initial Catalog=GradingSystem;Integrated Security=True" SettingsObjectName="GradingSystem.Properties.Settings" SettingsPropertyName="GradingSystemConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Class" Member="Classes">
+    <Type Name="Class">
+      <Column Name="Course_code" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Semester_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Max_enrollment" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Enrollment" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Class_time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Class_Enrollment" Member="Enrollments" ThisKey="Course_code,Semester_id" OtherKey="Course_code,Semester_id" Type="Enrollment" />
+      <Association Name="Course_Class" Member="Course" ThisKey="Course_code" OtherKey="Course_code" Type="Course" IsForeignKey="true" />
+      <Association Name="Semester_Year_Class" Member="Semester_Year" ThisKey="Semester_id" OtherKey="Semester_id" Type="Semester_Year" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Course" Member="Courses">
+    <Type Name="Course">
+      <Column Name="Course_code" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Course_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Credit_hours" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Professor_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Course_Class" Member="Classes" ThisKey="Course_code" OtherKey="Course_code" Type="Class" />
+      <Association Name="Professor_Course" Member="Professor" ThisKey="Professor_id" OtherKey="Professor_id" Type="Professor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Department" Member="Departments">
+    <Type Name="Department">
+      <Column Name="Dept_no" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Dept_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="location" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Department_Professor" Member="Professors" ThisKey="Dept_no" OtherKey="Dept_no" Type="Professor" />
+      <Association Name="Department_Student" Member="Students" ThisKey="Dept_no" OtherKey="Dept_no" Type="Student" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Enrollment" Member="Enrollments">
+    <Type Name="Enrollment">
+      <Column Name="Course_code" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Semester_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Student_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Year_work" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="Project_marks" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="Final_exam" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="Total_marks" Type="System.Decimal" DbType="Decimal(5,0)" CanBeNull="true" />
+      <Association Name="Class_Enrollment" Member="Class" ThisKey="Course_code,Semester_id" OtherKey="Course_code,Semester_id" Type="Class" IsForeignKey="true" />
+      <Association Name="Student_Enrollment" Member="Student" ThisKey="Student_id" OtherKey="Student_id" Type="Student" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Professor" Member="Professors">
+    <Type Name="Professor">
+      <Column Name="Professor_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="First_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Last_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DOB" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Dept_no" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="Professor_Course" Member="Courses" ThisKey="Professor_id" OtherKey="Professor_id" Type="Course" />
+      <Association Name="Professor_Professor_Phone" Member="Professor_Phones" ThisKey="Professor_id" OtherKey="Professor_id" Type="Professor_Phone" />
+      <Association Name="Department_Professor" Member="Department" ThisKey="Dept_no" OtherKey="Dept_no" Type="Department" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Professor_Phones" Member="Professor_Phones">
+    <Type Name="Professor_Phone">
+      <Column Name="Serial" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Professor_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Phone_no" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="Professor_Professor_Phone" Member="Professor" ThisKey="Professor_id" OtherKey="Professor_id" Type="Professor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Semester" Member="Semesters">
+    <Type Name="Semester">
+      <Column Name="Semester_code" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Semester_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Semester_Semester_Year" Member="Semester_Years" ThisKey="Semester_code" OtherKey="Semester_code" Type="Semester_Year" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Semester_Year" Member="Semester_Years">
+    <Type Name="Semester_Year">
+      <Column Name="Semester_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Semester_code" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Year" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Association Name="Semester_Year_Class" Member="Classes" ThisKey="Semester_id" OtherKey="Semester_id" Type="Class" />
+      <Association Name="Semester_Semester_Year" Member="Semester" ThisKey="Semester_code" OtherKey="Semester_code" Type="Semester" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Student" Member="Students">
+    <Type Name="Student">
+      <Column Name="Student_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="First_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Last_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DOB" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Gender" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Dept_no" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Student_Enrollment" Member="Enrollments" ThisKey="Student_id" OtherKey="Student_id" Type="Enrollment" />
+      <Association Name="Student_Student_Phone" Member="Student_Phones" ThisKey="Student_id" OtherKey="Student_id" Type="Student_Phone" />
+      <Association Name="Department_Student" Member="Department" ThisKey="Dept_no" OtherKey="Dept_no" Type="Department" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Student_Phones" Member="Student_Phones">
+    <Type Name="Student_Phone">
+      <Column Name="Serial" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Student_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Phone_no" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="Student_Student_Phone" Member="Student" ThisKey="Student_id" OtherKey="Student_id" Type="Student" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
