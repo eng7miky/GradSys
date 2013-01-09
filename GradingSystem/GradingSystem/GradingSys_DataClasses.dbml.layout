@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 13.875, 11.25" name="GradingSys_DataClasses">
+  <DataContextMoniker Name="/GradingSys_DataClassesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="370dc971-d64e-4aee-a931-ad22af8217de" absoluteBounds="8.875, 6.375, 2, 1.7708968098958335">
+      <DataClassMoniker Name="/GradingSys_DataClassesDataContext/Class" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9d53807e-1eb8-4031-9aff-03e2da47f853" absoluteBounds="8.89, 6.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7559d340-a6b1-466e-a427-cd3dc4b393b1" absoluteBounds="6.125, 1.875, 2, 1.3862939453125003">
+      <DataClassMoniker Name="/GradingSys_DataClassesDataContext/Student_Phone" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d7305f32-1a82-4c77-8071-d1570baab29c" absoluteBounds="6.14, 2.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="01351f08-e7a2-4119-bd4b-98a37812f76d" absoluteBounds="6.125, 6.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/GradingSys_DataClassesDataContext/Course" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c78c579b-1da4-46a0-b7c1-3f4681b9981f" absoluteBounds="6.14, 6.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="369c31b3-d582-4277-8d41-9c208842e946" absoluteBounds="0.625, 4.125, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/GradingSys_DataClassesDataContext/Department" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e84eacea-e1d3-4792-9ef8-dbb2a9eae19b" absoluteBounds="0.64, 4.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7793471a-fa89-4a08-bf6b-469a9ccc1122" absoluteBounds="11.625, 3.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/GradingSys_DataClassesDataContext/Enrollment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ac8c52f5-4a7e-4c45-b2de-9cfd670aafcd" absoluteBounds="11.64, 4.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="708eb603-597f-489d-8c5f-7569386513bc" absoluteBounds="3.375, 5, 2, 2.3478011067708326">
+      <DataClassMoniker Name="/GradingSys_DataClassesDataContext/Professor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e5589942-ef8c-4103-940c-e5cf47894f25" absoluteBounds="3.39, 5.46, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b665368d-08d5-4714-964f-f7c4b07476c8" absoluteBounds="6.125, 4.375, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/GradingSys_DataClassesDataContext/Professor_Phone" />
+      <nestedChildShapes>
+        <elementListCompartment Id="943fe787-c41f-494d-8457-564427362a52" absoluteBounds="6.14, 4.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b9307c5c-6a02-44d8-b38a-8c9d015ea953" absoluteBounds="3.375, 9.75, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/GradingSys_DataClassesDataContext/Semester" />
+      <nestedChildShapes>
+        <elementListCompartment Id="45037965-7eea-4608-ae81-6d3eadf60cf7" absoluteBounds="3.39, 10.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="64e98a3c-7cd5-4590-9a96-1e5acda815a7" absoluteBounds="6.125, 9.625, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/GradingSys_DataClassesDataContext/Semester_Year" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f66bcef9-3179-4f51-ad36-a3f0151a6611" absoluteBounds="6.14, 10.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="09599eb1-9b05-47b4-aa00-ac59b6e6f8d2" absoluteBounds="3.375, 1.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/GradingSys_DataClassesDataContext/Student" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f85ce928-bdf1-4fe1-9a6a-f3165223eacf" absoluteBounds="3.39, 1.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.125 : 7.28929768880208); (8.875 : 7.28929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/GradingSys_DataClassesDataContext/Course/Course_Class" />
+      <nodes>
+        <classShapeMoniker Id="01351f08-e7a2-4119-bd4b-98a37812f76d" />
+        <classShapeMoniker Id="370dc971-d64e-4aee-a931-ad22af8217de" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.875 : 7.26044840494792); (12.625 : 7.26044840494792); (12.625 : 5.90549967447917)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/GradingSys_DataClassesDataContext/Class/Class_Enrollment" />
+      <nodes>
+        <classShapeMoniker Id="370dc971-d64e-4aee-a931-ad22af8217de" />
+        <classShapeMoniker Id="7793471a-fa89-4a08-bf6b-469a9ccc1122" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.375 : 6.92390055338542); (6.125 : 6.92390055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/GradingSys_DataClassesDataContext/Professor/Professor_Course" />
+      <nodes>
+        <classShapeMoniker Id="708eb603-597f-489d-8c5f-7569386513bc" />
+        <classShapeMoniker Id="01351f08-e7a2-4119-bd4b-98a37812f76d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.625 : 5.25564697265625); (3.375 : 5.25564697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/GradingSys_DataClassesDataContext/Department/Department_Professor" />
+      <nodes>
+        <classShapeMoniker Id="369c31b3-d582-4277-8d41-9c208842e946" />
+        <classShapeMoniker Id="708eb603-597f-489d-8c5f-7569386513bc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.375 : 5.38064697265625); (6.125 : 5.38064697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/GradingSys_DataClassesDataContext/Professor/Professor_Professor_Phone" />
+      <nodes>
+        <classShapeMoniker Id="708eb603-597f-489d-8c5f-7569386513bc" />
+        <classShapeMoniker Id="b665368d-08d5-4714-964f-f7c4b07476c8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.125 : 10.3181469726562); (9.875 : 10.3181469726562); (9.875 : 8.14589680989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/GradingSys_DataClassesDataContext/Semester_Year/Semester_Year_Class" />
+      <nodes>
+        <classShapeMoniker Id="64e98a3c-7cd5-4590-9a96-1e5acda815a7" />
+        <classShapeMoniker Id="370dc971-d64e-4aee-a931-ad22af8217de" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.375 : 10.3469962565104); (6.125 : 10.3469962565104)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/GradingSys_DataClassesDataContext/Semester/Semester_Semester_Year" />
+      <nodes>
+        <classShapeMoniker Id="b9307c5c-6a02-44d8-b38a-8c9d015ea953" />
+        <classShapeMoniker Id="64e98a3c-7cd5-4590-9a96-1e5acda815a7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.375 : 2.56814697265625); (6.125 : 2.56814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/GradingSys_DataClassesDataContext/Student/Student_Student_Phone" />
+      <nodes>
+        <classShapeMoniker Id="09599eb1-9b05-47b4-aa00-ac59b6e6f8d2" />
+        <classShapeMoniker Id="7559d340-a6b1-466e-a427-cd3dc4b393b1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.375 : 3.48964680989583); (12.625 : 3.48964680989583); (12.625 : 3.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/GradingSys_DataClassesDataContext/Student/Student_Enrollment" />
+      <nodes>
+        <classShapeMoniker Id="09599eb1-9b05-47b4-aa00-ac59b6e6f8d2" />
+        <classShapeMoniker Id="7793471a-fa89-4a08-bf6b-469a9ccc1122" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.625 : 4.125); (1.625 : 2.57774983723958); (3.375 : 2.57774983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/GradingSys_DataClassesDataContext/Department/Department_Student" />
+      <nodes>
+        <classShapeMoniker Id="369c31b3-d582-4277-8d41-9c208842e946" />
+        <classShapeMoniker Id="09599eb1-9b05-47b4-aa00-ac59b6e6f8d2" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

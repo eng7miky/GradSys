@@ -13,5 +13,10 @@ namespace GradingSystem.Business_logic
             return ProfessorDAO.getProfessor(username, password);
 
         }
+
+        public static List<Professor> selectAll()
+        {
+            return ProfessorDAO.selectAll();
+        }
     }
 }

@@ -9,19 +9,16 @@ using System.Windows.Forms;
 
 namespace GradingSystem
 {
-    public partial class FrmMain : Form
+    public partial class FrmStudents : Form
     {
-        public FrmMain()
+        public FrmStudents()
         {
             InitializeComponent();
         }
 
-        private void btnStudents_Click(object sender, EventArgs e)
+        private void FrmStudents_Load(object sender, EventArgs e)
         {
-            new FrmStudents().Show();
-            this.Hide();
+
         }
-
-
     }
 }

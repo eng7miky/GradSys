@@ -67,6 +67,7 @@
             this.btnStudents.TabIndex = 6;
             this.btnStudents.Text = "Students";
             this.btnStudents.UseVisualStyleBackColor = true;
+            this.btnStudents.Click += new System.EventHandler(this.btnStudents_Click);
             // 
             // btnGrades
             // 

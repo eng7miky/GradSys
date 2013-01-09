@@ -9,13 +9,25 @@ namespace GradingSystem.DAO
     {
         public static Professor getProfessor(string username, string password)
         {
-            GradingSystem_DataClassesDataContext db = new GradingSystem_DataClassesDataContext();
+            GradingSys_DataClassesDataContext db = new GradingSys_DataClassesDataContext();
             var query = from prof in db.Professors
                         where prof.Username == username && prof.Password == password
                         select prof;
+            if(query==null)
+                return null;
 
             return query.First<Professor>();
 
         }
+        public static List<Professor> selectAll()
+        {
+            GradingSys_DataClassesDataContext db = new GradingSys_DataClassesDataContext();
+            var query = from prof in db.Professors
+                         select prof;
+
+            return query.ToList<Professor>();
+
+        }
+
     }
 }

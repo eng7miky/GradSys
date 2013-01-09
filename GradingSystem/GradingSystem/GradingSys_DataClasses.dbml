@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="GradingSystem" Class="GradingSystem_DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=PETER-PC\SQLEXPRESS;Initial Catalog=GradingSystem;Integrated Security=True" SettingsObjectName="GradingSystem.Properties.Settings" SettingsPropertyName="GradingSystemConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="GradingSys" Class="GradingSys_DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=HP-HP\SQLEXPRESS;Initial Catalog=GradingSys;User ID=root" SettingsObjectName="GradingSystem.Properties.Settings" SettingsPropertyName="GradingSysConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Class" Member="Classes">
     <Type Name="Class">
       <Column Name="Course_code" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -10,6 +10,14 @@
       <Association Name="Class_Enrollment" Member="Enrollments" ThisKey="Course_code,Semester_id" OtherKey="Course_code,Semester_id" Type="Enrollment" />
       <Association Name="Course_Class" Member="Course" ThisKey="Course_code" OtherKey="Course_code" Type="Course" IsForeignKey="true" />
       <Association Name="Semester_Year_Class" Member="Semester_Year" ThisKey="Semester_id" OtherKey="Semester_id" Type="Semester_Year" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Student_Phones" Member="Student_Phones">
+    <Type Name="Student_Phone">
+      <Column Name="Serial" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Student_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Phone_no" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="Student_Student_Phone" Member="Student" ThisKey="Student_id" OtherKey="Student_id" Type="Student" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Course" Member="Courses">
@@ -92,17 +100,9 @@
       <Column Name="DOB" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="Gender" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="Dept_no" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Student_Enrollment" Member="Enrollments" ThisKey="Student_id" OtherKey="Student_id" Type="Enrollment" />
       <Association Name="Student_Student_Phone" Member="Student_Phones" ThisKey="Student_id" OtherKey="Student_id" Type="Student_Phone" />
+      <Association Name="Student_Enrollment" Member="Enrollments" ThisKey="Student_id" OtherKey="Student_id" Type="Enrollment" />
       <Association Name="Department_Student" Member="Department" ThisKey="Dept_no" OtherKey="Dept_no" Type="Department" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Student_Phones" Member="Student_Phones">
-    <Type Name="Student_Phone">
-      <Column Name="Serial" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Student_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Phone_no" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Association Name="Student_Student_Phone" Member="Student" ThisKey="Student_id" OtherKey="Student_id" Type="Student" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

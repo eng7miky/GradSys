@@ -28,18 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.LoginGbx = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnLogIn = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cbxLoginName = new System.Windows.Forms.ComboBox();
+            this.professorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.LoginGbx.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.professorBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // LoginGbx
             // 
-            this.LoginGbx.Controls.Add(this.button1);
+            this.LoginGbx.Controls.Add(this.btnLogIn);
             this.LoginGbx.Controls.Add(this.textBox1);
             this.LoginGbx.Controls.Add(this.label2);
             this.LoginGbx.Controls.Add(this.label1);
@@ -52,18 +55,19 @@
             this.LoginGbx.TabStop = false;
             this.LoginGbx.Text = "Login";
             // 
-            // button1
+            // btnLogIn
             // 
-            this.button1.Location = new System.Drawing.Point(263, 138);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 34);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Log In";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnLogIn.Location = new System.Drawing.Point(263, 138);
+            this.btnLogIn.Name = "btnLogIn";
+            this.btnLogIn.Size = new System.Drawing.Size(105, 34);
+            this.btnLogIn.TabIndex = 5;
+            this.btnLogIn.Text = "Log In";
+            this.btnLogIn.UseVisualStyleBackColor = true;
+            this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(145, 95);
+            this.textBox1.Location = new System.Drawing.Point(145, 96);
             this.textBox1.MaxLength = 14;
             this.textBox1.Name = "textBox1";
             this.textBox1.PasswordChar = '*';
@@ -90,11 +94,17 @@
             // 
             // cbxLoginName
             // 
+            this.cbxLoginName.DisplayMember = "Username";
             this.cbxLoginName.FormattingEnabled = true;
             this.cbxLoginName.Location = new System.Drawing.Point(145, 46);
             this.cbxLoginName.Name = "cbxLoginName";
             this.cbxLoginName.Size = new System.Drawing.Size(121, 21);
             this.cbxLoginName.TabIndex = 0;
+            this.cbxLoginName.ValueMember = "Professor_id";
+            // 
+            // professorBindingSource
+            // 
+            this.professorBindingSource.DataSource = typeof(GradingSystem.Professor);
             // 
             // FrmLogin
             // 
@@ -106,6 +116,7 @@
             this.Text = "FrmLogin";
             this.LoginGbx.ResumeLayout(false);
             this.LoginGbx.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.professorBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -117,6 +128,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbxLoginName;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLogIn;
+        private System.Windows.Forms.BindingSource professorBindingSource;
     }
 }

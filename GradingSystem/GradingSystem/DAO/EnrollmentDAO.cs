@@ -9,7 +9,7 @@ namespace GradingSystem.DAO
     {
         public static Boolean registerStudent(int cCode, int semester_id, int student_id, double year_work, double project_marks, double final_exam, double total_marks)
         {
-            GradingSystem_DataClassesDataContext db = new GradingSystem_DataClassesDataContext();
+            GradingSys_DataClassesDataContext db = new GradingSys_DataClassesDataContext();
             Enrollment enroll  = new Enrollment
             {
                 Course_code = cCode,
@@ -36,7 +36,7 @@ namespace GradingSystem.DAO
 
         public static Boolean updateStudent_CourseMarks(int cCode, int semester_id, int student_id, double year_work, double project_marks, double final_exam, double total_marks)
         {
-            GradingSystem_DataClassesDataContext db = new GradingSystem_DataClassesDataContext();
+            GradingSys_DataClassesDataContext db = new GradingSys_DataClassesDataContext();
 
             var query = from c in db.Enrollments
                         where c.Course_code == cCode && c.Semester_id == semester_id && c.Student_id == student_id
@@ -67,7 +67,7 @@ namespace GradingSystem.DAO
 
         public static Boolean unregisterStudent(int cCode, int semester_id, int student_id)
         {
-            GradingSystem_DataClassesDataContext db = new GradingSystem_DataClassesDataContext();
+            GradingSys_DataClassesDataContext db = new GradingSys_DataClassesDataContext();
 
             var deleteQuery = from enroll in db.Enrollments
                               where enroll.Course_code == cCode && enroll.Semester_id == semester_id && enroll.Student_id == student_id

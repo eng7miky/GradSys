@@ -9,7 +9,7 @@ namespace GradingSystem.DAO
     {
         public static Boolean addClass(int cCode, int semester_id, int max_enrollment, int enrollment, DateTime Class_time)
         {
-            GradingSystem_DataClassesDataContext db = new GradingSystem_DataClassesDataContext();
+            GradingSys_DataClassesDataContext db = new GradingSys_DataClassesDataContext();
             Class classObj = new Class
             {
                 Course_code = cCode,
@@ -34,7 +34,7 @@ namespace GradingSystem.DAO
 
         public static Boolean updateClass(int cCode, int semester_id, int max_enrollment, int enrollment, DateTime Class_time)
         {
-            GradingSystem_DataClassesDataContext db = new GradingSystem_DataClassesDataContext();
+            GradingSys_DataClassesDataContext db = new GradingSys_DataClassesDataContext();
 
             var query = from c in db.Classes
                         where c.Course_code == cCode && c.Semester_id == semester_id
@@ -64,7 +64,7 @@ namespace GradingSystem.DAO
 
         public static Boolean deleteClass(int cCode, int semester_id)
         {
-            GradingSystem_DataClassesDataContext db = new GradingSystem_DataClassesDataContext();
+            GradingSys_DataClassesDataContext db = new GradingSys_DataClassesDataContext();
 
             var deleteQuery = from c in db.Classes
                               where c.Course_code == cCode && c.Semester_id == semester_id

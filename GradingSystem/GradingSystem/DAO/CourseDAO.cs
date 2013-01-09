@@ -9,7 +9,7 @@ namespace GradingSystem.DAO
     {
         public static Boolean addCourse(int cCode, string cName, int credit_hours, int prof_id)
         {
-            GradingSystem_DataClassesDataContext db = new GradingSystem_DataClassesDataContext();
+            GradingSys_DataClassesDataContext db = new GradingSys_DataClassesDataContext();
             Course course = new Course
             {
                 Course_code = cCode,
@@ -33,7 +33,7 @@ namespace GradingSystem.DAO
 
         public static Boolean updateCourse(int cCode, string cName, int credit_hours, int prof_id)
         {
-            GradingSystem_DataClassesDataContext db = new GradingSystem_DataClassesDataContext();
+            GradingSys_DataClassesDataContext db = new GradingSys_DataClassesDataContext();
 
             var query = from c in db.Courses 
                         where c.Course_code == cCode
@@ -61,7 +61,7 @@ namespace GradingSystem.DAO
 
         public static Boolean deleteCourse(int cCode)
         {
-            GradingSystem_DataClassesDataContext db = new GradingSystem_DataClassesDataContext();
+            GradingSys_DataClassesDataContext db = new GradingSys_DataClassesDataContext();
 
             var deleteQuery = from c in db.Courses
                               where c.Course_code == cCode

@@ -9,7 +9,7 @@ namespace GradingSystem.DAO
     {
         public static Boolean addStudent(string fName, string lName, string address, bool gender, DateTime dob, int dept_no)
         {
-            GradingSystem_DataClassesDataContext db = new GradingSystem_DataClassesDataContext();
+            GradingSys_DataClassesDataContext db = new GradingSys_DataClassesDataContext();
             Student student = new Student
             {
                 First_name = fName,
@@ -35,7 +35,7 @@ namespace GradingSystem.DAO
 
         public static Boolean updateStudent(int student_id, string fName, string lName, string address, bool gender, DateTime dob, int dept_no)
         {
-            GradingSystem_DataClassesDataContext db = new GradingSystem_DataClassesDataContext();
+            GradingSys_DataClassesDataContext db = new GradingSys_DataClassesDataContext();
             var query = from stud in db.Students
                         where stud.Student_id == student_id
                         select stud;
@@ -67,7 +67,7 @@ namespace GradingSystem.DAO
 
         public static Boolean deleteStudent(int student_id)
         {
-            GradingSystem_DataClassesDataContext db = new GradingSystem_DataClassesDataContext();
+            GradingSys_DataClassesDataContext db = new GradingSys_DataClassesDataContext();
 
             var deleteQuery = from stud in db.Students
                               where stud.Student_id == student_id
