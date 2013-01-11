@@ -189,9 +189,13 @@ namespace GradingSystem
 		
 		private System.Nullable<System.DateTime> _Class_time;
 		
+		private System.Nullable<int> _Professor_id;
+		
 		private EntitySet<Enrollment> _Enrollments;
 		
 		private EntityRef<Course> _Course;
+		
+		private EntityRef<Professor> _Professor;
 		
 		private EntityRef<Semester_Year> _Semester_Year;
 		
@@ -209,12 +213,15 @@ namespace GradingSystem
     partial void OnEnrollmentChanged();
     partial void OnClass_timeChanging(System.Nullable<System.DateTime> value);
     partial void OnClass_timeChanged();
+    partial void OnProfessor_idChanging(System.Nullable<int> value);
+    partial void OnProfessor_idChanged();
     #endregion
 		
 		public Class()
 		{
 			this._Enrollments = new EntitySet<Enrollment>(new Action<Enrollment>(this.attach_Enrollments), new Action<Enrollment>(this.detach_Enrollments));
 			this._Course = default(EntityRef<Course>);
+			this._Professor = default(EntityRef<Professor>);
 			this._Semester_Year = default(EntityRef<Semester_Year>);
 			OnCreated();
 		}
@@ -327,6 +334,30 @@ namespace GradingSystem
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Professor_id", DbType="Int")]
+		public System.Nullable<int> Professor_id
+		{
+			get
+			{
+				return this._Professor_id;
+			}
+			set
+			{
+				if ((this._Professor_id != value))
+				{
+					if (this._Professor.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnProfessor_idChanging(value);
+					this.SendPropertyChanging();
+					this._Professor_id = value;
+					this.SendPropertyChanged("Professor_id");
+					this.OnProfessor_idChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Class_Enrollment", Storage="_Enrollments", ThisKey="Course_code,Semester_id", OtherKey="Course_code,Semester_id")]
 		public EntitySet<Enrollment> Enrollments
 		{
@@ -370,6 +401,40 @@ namespace GradingSystem
 						this._Course_code = default(int);
 					}
 					this.SendPropertyChanged("Course");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Professor_Class", Storage="_Professor", ThisKey="Professor_id", OtherKey="Professor_id", IsForeignKey=true)]
+		public Professor Professor
+		{
+			get
+			{
+				return this._Professor.Entity;
+			}
+			set
+			{
+				Professor previousValue = this._Professor.Entity;
+				if (((previousValue != value) 
+							|| (this._Professor.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Professor.Entity = null;
+						previousValue.Classes.Remove(this);
+					}
+					this._Professor.Entity = value;
+					if ((value != null))
+					{
+						value.Classes.Add(this);
+						this._Professor_id = value.Professor_id;
+					}
+					else
+					{
+						this._Professor_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Professor");
 				}
 			}
 		}
@@ -604,11 +669,7 @@ namespace GradingSystem
 		
 		private System.Nullable<int> _Credit_hours;
 		
-		private System.Nullable<int> _Professor_id;
-		
 		private EntitySet<Class> _Classes;
-		
-		private EntityRef<Professor> _Professor;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -620,14 +681,11 @@ namespace GradingSystem
     partial void OnCourse_nameChanged();
     partial void OnCredit_hoursChanging(System.Nullable<int> value);
     partial void OnCredit_hoursChanged();
-    partial void OnProfessor_idChanging(System.Nullable<int> value);
-    partial void OnProfessor_idChanged();
     #endregion
 		
 		public Course()
 		{
 			this._Classes = new EntitySet<Class>(new Action<Class>(this.attach_Classes), new Action<Class>(this.detach_Classes));
-			this._Professor = default(EntityRef<Professor>);
 			OnCreated();
 		}
 		
@@ -691,30 +749,6 @@ namespace GradingSystem
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Professor_id", DbType="Int")]
-		public System.Nullable<int> Professor_id
-		{
-			get
-			{
-				return this._Professor_id;
-			}
-			set
-			{
-				if ((this._Professor_id != value))
-				{
-					if (this._Professor.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnProfessor_idChanging(value);
-					this.SendPropertyChanging();
-					this._Professor_id = value;
-					this.SendPropertyChanged("Professor_id");
-					this.OnProfessor_idChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Course_Class", Storage="_Classes", ThisKey="Course_code", OtherKey="Course_code")]
 		public EntitySet<Class> Classes
 		{
@@ -725,40 +759,6 @@ namespace GradingSystem
 			set
 			{
 				this._Classes.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Professor_Course", Storage="_Professor", ThisKey="Professor_id", OtherKey="Professor_id", IsForeignKey=true)]
-		public Professor Professor
-		{
-			get
-			{
-				return this._Professor.Entity;
-			}
-			set
-			{
-				Professor previousValue = this._Professor.Entity;
-				if (((previousValue != value) 
-							|| (this._Professor.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Professor.Entity = null;
-						previousValue.Courses.Remove(this);
-					}
-					this._Professor.Entity = value;
-					if ((value != null))
-					{
-						value.Courses.Add(this);
-						this._Professor_id = value.Professor_id;
-					}
-					else
-					{
-						this._Professor_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Professor");
-				}
 			}
 		}
 		
@@ -1277,7 +1277,7 @@ namespace GradingSystem
 		
 		private string _Password;
 		
-		private EntitySet<Course> _Courses;
+		private EntitySet<Class> _Classes;
 		
 		private EntitySet<Professor_Phone> _Professor_Phones;
 		
@@ -1307,7 +1307,7 @@ namespace GradingSystem
 		
 		public Professor()
 		{
-			this._Courses = new EntitySet<Course>(new Action<Course>(this.attach_Courses), new Action<Course>(this.detach_Courses));
+			this._Classes = new EntitySet<Class>(new Action<Class>(this.attach_Classes), new Action<Class>(this.detach_Classes));
 			this._Professor_Phones = new EntitySet<Professor_Phone>(new Action<Professor_Phone>(this.attach_Professor_Phones), new Action<Professor_Phone>(this.detach_Professor_Phones));
 			this._Department = default(EntityRef<Department>);
 			OnCreated();
@@ -1477,16 +1477,16 @@ namespace GradingSystem
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Professor_Course", Storage="_Courses", ThisKey="Professor_id", OtherKey="Professor_id")]
-		public EntitySet<Course> Courses
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Professor_Class", Storage="_Classes", ThisKey="Professor_id", OtherKey="Professor_id")]
+		public EntitySet<Class> Classes
 		{
 			get
 			{
-				return this._Courses;
+				return this._Classes;
 			}
 			set
 			{
-				this._Courses.Assign(value);
+				this._Classes.Assign(value);
 			}
 		}
 		
@@ -1557,13 +1557,13 @@ namespace GradingSystem
 			}
 		}
 		
-		private void attach_Courses(Course entity)
+		private void attach_Classes(Class entity)
 		{
 			this.SendPropertyChanging();
 			entity.Professor = this;
 		}
 		
-		private void detach_Courses(Course entity)
+		private void detach_Classes(Class entity)
 		{
 			this.SendPropertyChanging();
 			entity.Professor = null;
