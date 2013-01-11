@@ -55,12 +55,14 @@
     <Compile Include="Business logic\DepartmentBusinessLogic.cs" />
     <Compile Include="Business logic\EnrollmentBusinessLogic.cs" />
     <Compile Include="Business logic\ProfessorBusinessLogic.cs" />
+    <Compile Include="Business logic\Semester_YearBusinessLogic.cs" />
     <Compile Include="Business logic\StudentBusinessLogic.cs" />
     <Compile Include="DAO\ClassDAO.cs" />
     <Compile Include="DAO\CourseDAO.cs" />
     <Compile Include="DAO\DepartmentDAO.cs" />
     <Compile Include="DAO\EnrollmentDAO.cs" />
     <Compile Include="DAO\ProfessorDAO.cs" />
+    <Compile Include="DAO\Semester_YearDAO.cs" />
     <Compile Include="DAO\StudentDAO.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

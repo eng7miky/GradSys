@@ -8,7 +8,7 @@ namespace GradingSystem.Business_logic
 {
     class DepartmentBusinessLogic
     {
-
+        
         public static List<Department> selectAll()
         {
             return DepartmentDAO.selectAll();
