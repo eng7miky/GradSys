@@ -52,11 +52,13 @@
   <ItemGroup>
     <Compile Include="Business logic\ClassBusinessLogic.cs" />
     <Compile Include="Business logic\CourseBusinessLogic.cs" />
+    <Compile Include="Business logic\DepartmentBusinessLogic.cs" />
     <Compile Include="Business logic\EnrollmentBusinessLogic.cs" />
     <Compile Include="Business logic\ProfessorBusinessLogic.cs" />
     <Compile Include="Business logic\StudentBusinessLogic.cs" />
     <Compile Include="DAO\ClassDAO.cs" />
     <Compile Include="DAO\CourseDAO.cs" />
+    <Compile Include="DAO\DepartmentDAO.cs" />
     <Compile Include="DAO\EnrollmentDAO.cs" />
     <Compile Include="DAO\ProfessorDAO.cs" />
     <Compile Include="DAO\StudentDAO.cs" />
@@ -96,6 +98,11 @@
     <Compile Include="FrmStudents.Designer.cs">
       <DependentUpon>FrmStudents.cs</DependentUpon>
     </Compile>
+    <Compile Include="GradingSysDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GradingSysDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="GradingSys_DataClasses.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -119,6 +126,17 @@
     <EmbeddedResource Include="FrmStudents.resx">
       <DependentUpon>FrmStudents.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="GradingSysDataSet.xsc">
+      <DependentUpon>GradingSysDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GradingSysDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GradingSysDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GradingSysDataSet.xss">
+      <DependentUpon>GradingSysDataSet.xsd</DependentUpon>
+    </None>
     <None Include="GradingSys_DataClasses.dbml.layout">
       <DependentUpon>GradingSys_DataClasses.dbml</DependentUpon>
     </None>

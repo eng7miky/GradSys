@@ -13,7 +13,7 @@ namespace GradingSystem.DAO
             var query = from prof in db.Professors
                         where prof.Username == username && prof.Password == password
                         select prof;
-            if(query==null)
+            if (query.Count() == 0)
                 return null;
 
             return query.First<Professor>();

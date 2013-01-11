@@ -36,12 +36,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cbxLoginName = new System.Windows.Forms.ComboBox();
             this.professorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lblMsg = new System.Windows.Forms.Label();
             this.LoginGbx.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.professorBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // LoginGbx
             // 
+            this.LoginGbx.Controls.Add(this.lblMsg);
             this.LoginGbx.Controls.Add(this.btnLogIn);
             this.LoginGbx.Controls.Add(this.textBox1);
             this.LoginGbx.Controls.Add(this.label2);
@@ -106,6 +108,17 @@
             // 
             this.professorBindingSource.DataSource = typeof(GradingSystem.Professor);
             // 
+            // lblMsg
+            // 
+            this.lblMsg.AutoSize = true;
+            this.lblMsg.ForeColor = System.Drawing.Color.Red;
+            this.lblMsg.Location = new System.Drawing.Point(7, 160);
+            this.lblMsg.Name = "lblMsg";
+            this.lblMsg.Size = new System.Drawing.Size(152, 13);
+            this.lblMsg.TabIndex = 6;
+            this.lblMsg.Text = "Invalid Username or Password";
+            this.lblMsg.Visible = false;
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -130,5 +143,6 @@
         private System.Windows.Forms.ComboBox cbxLoginName;
         private System.Windows.Forms.Button btnLogIn;
         private System.Windows.Forms.BindingSource professorBindingSource;
+        private System.Windows.Forms.Label lblMsg;
     }
 }

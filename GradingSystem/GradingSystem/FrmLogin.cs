@@ -29,9 +29,12 @@ namespace GradingSystem
            int x = 0;
            if (p != null)
            {
+               lblMsg.Visible = false;
                new FrmMain().Show();
                this.Hide();
            }
+           else
+               lblMsg.Visible = true;
                 
 
         }

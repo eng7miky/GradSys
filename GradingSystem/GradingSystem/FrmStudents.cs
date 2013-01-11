@@ -16,8 +16,8 @@ namespace GradingSystem
         public FrmStudents(FrmMain mainForm)
         {
             InitializeComponent();
+            this.departmentBindingSource.DataSource = DepartmentBusinessLogic.selectAll();
             this.studentBindingSource.DataSource = StudentBusinessLogic.selectAll();
-            
             this.mainForm = mainForm;
         }
 
