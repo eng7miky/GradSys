@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using GradingSystem.Business_logic;
 
 namespace GradingSystem
 {
@@ -15,6 +16,19 @@ namespace GradingSystem
         public FrmClasses(FrmMain mainForm)
         {
             InitializeComponent();
+            // 
+            // classBindingSource
+            // 
+            this.classBindingSource.DataSource = ClassBusinessLogic.selectAll();
+            // 
+            // courseBindingSource
+            // 
+            this.courseBindingSource.DataSource = CourseBusinessLogic.selectAll();
+            // 
+            // semesterBindingSource
+            // 
+            this.semesterBindingSource.DataSource = typeof(GradingSystem.Semester);
+           
             this.mainForm = mainForm;
         }
 

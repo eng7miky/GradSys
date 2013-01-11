@@ -147,18 +147,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(446, 239);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.RowDividerDoubleClick += new System.Windows.Forms.DataGridViewRowDividerDoubleClickEventHandler(this.dataGridView1_RowDividerDoubleClick);
-            // 
-            // classBindingSource
-            // 
-            this.classBindingSource.DataSource = typeof(GradingSystem.Class);
-            // 
-            // courseBindingSource
-            // 
-            this.courseBindingSource.DataSource = typeof(GradingSystem.Course);
-            // 
-            // semesterBindingSource
-            // 
-            this.semesterBindingSource.DataSource = typeof(GradingSystem.Semester);
+
             // 
             // coursecodeDataGridViewTextBoxColumn
             // 
