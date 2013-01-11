@@ -25,5 +25,11 @@ namespace GradingSystem.Business_logic
             Boolean success = ClassDAO.deleteClass(cCode, semester_id);
             return success;
         }
+
+        public static List<Class> selectAll()
+        {
+            return ClassDAO.selectAll();
+        }
+
     }
 }

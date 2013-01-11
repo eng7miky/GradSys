@@ -30,18 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgridStudents = new System.Windows.Forms.DataGridView();
-            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.studentidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dOBDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.deptnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgridStudents)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgridStudents
@@ -62,14 +63,6 @@
             this.dgridStudents.Name = "dgridStudents";
             this.dgridStudents.Size = new System.Drawing.Size(843, 150);
             this.dgridStudents.TabIndex = 0;
-            // 
-            // studentBindingSource
-            // 
-            this.studentBindingSource.DataSource = typeof(GradingSystem.Student);
-            // 
-            // departmentBindingSource
-            // 
-            this.departmentBindingSource.DataSource = typeof(GradingSystem.Department);
             // 
             // studentidDataGridViewTextBoxColumn
             // 
@@ -104,10 +97,7 @@
             // genderDataGridViewTextBoxColumn
             // 
             this.genderDataGridViewTextBoxColumn.DataPropertyName = "Gender";
-            this.genderDataGridViewTextBoxColumn.HeaderText = "Gender";
-            this.genderDataGridViewTextBoxColumn.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
+            this.genderDataGridViewTextBoxColumn.HeaderText = "Gender(male -> unchecked)";
             this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
             this.genderDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.genderDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
@@ -123,18 +113,35 @@
             this.deptnoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.deptnoDataGridViewTextBoxColumn.ValueMember = "Dept_no";
             // 
+            // departmentBindingSource
+            //
+            // 
+            // studentBindingSource
+            // 
+            // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(925, 255);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.TabIndex = 2;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // FrmStudents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1012, 290);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.dgridStudents);
             this.Name = "FrmStudents";
             this.Text = "FrmStudents";
             this.Load += new System.EventHandler(this.FrmStudents_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgridStudents)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -149,7 +156,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn lastnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dOBDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn genderDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn genderDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn deptnoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnBack;
     }
 }

@@ -66,6 +66,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmClasses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmClasses.Designer.cs">
+      <DependentUpon>FrmClasses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCourses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCourses.Designer.cs">
+      <DependentUpon>FrmCourses.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +103,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmClasses.resx">
+      <DependentUpon>FrmClasses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCourses.resx">
+      <DependentUpon>FrmCourses.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,8 +136,12 @@
       <LastGenOutput>GradingSys_DataClasses.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
+    <None Include="Properties\DataSources\Class.datasource" />
+    <None Include="Properties\DataSources\Course.datasource" />
     <None Include="Properties\DataSources\Department.datasource" />
+    <None Include="Properties\DataSources\GradingSystem.Business_logic.CourseBusinessLogic.datasource" />
     <None Include="Properties\DataSources\Professor.datasource" />
+    <None Include="Properties\DataSources\Semester.datasource" />
     <None Include="Properties\DataSources\Student.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

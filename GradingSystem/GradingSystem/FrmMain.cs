@@ -18,7 +18,19 @@ namespace GradingSystem
 
         private void btnStudents_Click(object sender, EventArgs e)
         {
-            new FrmStudents().Show();
+            new FrmStudents(this).Show();
+            this.Hide();
+        }
+
+        private void btnCourses_Click(object sender, EventArgs e)
+        {
+            new FrmCourses(this).Show();
+            this.Hide();
+        }
+
+        private void btnClasses_Click(object sender, EventArgs e)
+        {
+            new FrmClasses(this).Show();
             this.Hide();
         }
 

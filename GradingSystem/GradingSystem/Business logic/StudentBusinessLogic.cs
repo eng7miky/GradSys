@@ -25,5 +25,10 @@ namespace GradingSystem.Business_logic
             Boolean success = StudentDAO.deleteStudent(student_id);
             return success;
         }
+
+        public static List<Student> selectAll()
+        {
+            return StudentDAO.selectAll();
+        }
     }
 }

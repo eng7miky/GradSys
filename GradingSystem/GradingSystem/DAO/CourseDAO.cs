@@ -84,5 +84,13 @@ namespace GradingSystem.DAO
                 // Provide for exceptions.
             }
         }
+
+        public static List<Course> selectAll()
+        {
+            GradingSys_DataClassesDataContext db = new GradingSys_DataClassesDataContext();
+            var query = from course in db.Courses
+                        select course;
+            return query.ToList<Course>();
+        }
     }
 }

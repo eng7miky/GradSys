@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnClasses = new System.Windows.Forms.Button();
-            this.btnStudents = new System.Windows.Forms.Button();
             this.btnGrades = new System.Windows.Forms.Button();
             this.btnCourses = new System.Windows.Forms.Button();
+            this.btnClasses = new System.Windows.Forms.Button();
+            this.btnStudents = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,25 +49,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
-            // 
-            // btnClasses
-            // 
-            this.btnClasses.Location = new System.Drawing.Point(61, 154);
-            this.btnClasses.Name = "btnClasses";
-            this.btnClasses.Size = new System.Drawing.Size(168, 108);
-            this.btnClasses.TabIndex = 7;
-            this.btnClasses.Text = "Classes";
-            this.btnClasses.UseVisualStyleBackColor = true;
-            // 
-            // btnStudents
-            // 
-            this.btnStudents.Location = new System.Drawing.Point(276, 154);
-            this.btnStudents.Name = "btnStudents";
-            this.btnStudents.Size = new System.Drawing.Size(168, 108);
-            this.btnStudents.TabIndex = 6;
-            this.btnStudents.Text = "Students";
-            this.btnStudents.UseVisualStyleBackColor = true;
-            this.btnStudents.Click += new System.EventHandler(this.btnStudents_Click);
             // 
             // btnGrades
             // 
@@ -86,6 +67,27 @@
             this.btnCourses.TabIndex = 4;
             this.btnCourses.Text = "Courses";
             this.btnCourses.UseVisualStyleBackColor = true;
+            this.btnCourses.Click += new System.EventHandler(this.btnCourses_Click);
+            // 
+            // btnClasses
+            // 
+            this.btnClasses.Location = new System.Drawing.Point(61, 154);
+            this.btnClasses.Name = "btnClasses";
+            this.btnClasses.Size = new System.Drawing.Size(168, 108);
+            this.btnClasses.TabIndex = 7;
+            this.btnClasses.Text = "Classes";
+            this.btnClasses.UseVisualStyleBackColor = true;
+            this.btnClasses.Click += new System.EventHandler(this.btnClasses_Click);
+            // 
+            // btnStudents
+            // 
+            this.btnStudents.Location = new System.Drawing.Point(276, 154);
+            this.btnStudents.Name = "btnStudents";
+            this.btnStudents.Size = new System.Drawing.Size(168, 108);
+            this.btnStudents.TabIndex = 6;
+            this.btnStudents.Text = "Students";
+            this.btnStudents.UseVisualStyleBackColor = true;
+            this.btnStudents.Click += new System.EventHandler(this.btnStudents_Click);
             // 
             // FrmMain
             // 
@@ -103,10 +105,10 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnClasses;
-        private System.Windows.Forms.Button btnStudents;
         private System.Windows.Forms.Button btnGrades;
         private System.Windows.Forms.Button btnCourses;
+        private System.Windows.Forms.Button btnClasses;
+        private System.Windows.Forms.Button btnStudents;
 
     }
 }

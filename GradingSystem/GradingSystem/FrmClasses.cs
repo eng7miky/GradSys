@@ -6,25 +6,23 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using GradingSystem.Business_logic;
 
 namespace GradingSystem
 {
-    public partial class FrmStudents : Form
+    public partial class FrmClasses : Form
     {
         private FrmMain mainForm;
-        public FrmStudents(FrmMain mainForm)
+        public FrmClasses(FrmMain mainForm)
         {
             InitializeComponent();
-            this.studentBindingSource.DataSource = StudentBusinessLogic.selectAll();
-            
             this.mainForm = mainForm;
         }
 
-        private void FrmStudents_Load(object sender, EventArgs e)
+        private void dataGridView1_RowDividerDoubleClick(object sender, DataGridViewRowDividerDoubleClickEventArgs e)
         {
-
+            int x = 0;
         }
+
 
         private void btnBack_Click(object sender, EventArgs e)
         {
