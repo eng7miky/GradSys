@@ -7,6 +7,7 @@ namespace GradingSystem.DAO
 {
     class ProfessorDAO
     {
+        //prof_id is auto increment field
         public static Professor getProfessor(string username, string password)
         {
             GradingSys_DataClassesDataContext db = new GradingSys_DataClassesDataContext();

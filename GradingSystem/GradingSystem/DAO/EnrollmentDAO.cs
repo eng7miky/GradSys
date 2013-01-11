@@ -90,5 +90,41 @@ namespace GradingSystem.DAO
                 // Provide for exceptions.
             }
         }
+
+        public static List<Student> getStudentsOFClass(int cCode, int semester_id)
+        {
+            GradingSys_DataClassesDataContext db = new GradingSys_DataClassesDataContext();
+            var query = from enroll in db.Enrollments 
+                        where enroll.Course_code == cCode && enroll.Semester_id == semester_id
+                        select enroll.Student;
+
+            return query.ToList<Student>();
+
+        }
+
+        public class Student_Grades 
+        {
+            public string name { get; set; }
+            public double year_work  { get; set; }
+            public double project_marks  { get; set; }
+            public double final_exam  { get; set; }
+            public double total_marks  { get; set; }
+        }
+
+        public static List<Student_Grades> getStudentsGradesOFClass(int cCode, int semester_id)
+        {
+            GradingSys_DataClassesDataContext db = new GradingSys_DataClassesDataContext();
+            var result = from enroll in db.Enrollments join stud in db.Students
+                                                       on enroll.Student_id equals stud.Student_id
+                                     where enroll.Course_code == cCode && enroll.Semester_id == semester_id
+                                     select new Student_Grades(){ 
+                                                  name = stud.First_name + stud.Last_name,
+                                                  year_work = (double) enroll.Year_work,
+                                                  project_marks = (double) enroll.Project_marks,
+                                                  final_exam = (double) enroll.Final_exam,
+                                                  total_marks = (double) enroll.Total_marks
+                                                };
+            return result.ToList<Student_Grades>();
+        }
     }
 }

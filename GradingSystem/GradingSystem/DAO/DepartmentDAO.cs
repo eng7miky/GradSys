@@ -7,6 +7,8 @@ namespace GradingSystem.DAO
 {
     class DepartmentDAO
     {
+        //Dept_no is auto increment field
+
         //public static Boolean addStudent(string fName, string lName, string address, bool gender, DateTime dob, int dept_no)
         //{
         //    GradingSys_DataClassesDataContext db = new GradingSys_DataClassesDataContext();

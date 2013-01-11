@@ -5,18 +5,18 @@ using System.Text;
 
 namespace GradingSystem.DAO
 {
-    class CourseDAO
+    class Semester_YearDAO
     {
-        public static Boolean addCourse(int cCode, string cName, int credit_hours)
+        //Semester_id is auto increment field
+        public static Boolean addSemester_Year(int semester_code, string year)
         {
             GradingSys_DataClassesDataContext db = new GradingSys_DataClassesDataContext();
-            Course course = new Course
+            Semester_Year Semester_Year = new Semester_Year
             {
-                Course_code = cCode,
-                Course_name = cName,
-                Credit_hours = credit_hours,
+                Semester_code = semester_code,
+                Year = year,
             };
-            db.Courses.InsertOnSubmit(course);
+            db.Semester_Years.InsertOnSubmit(Semester_Year);
             // Submit the change to the database.
             try
             {
@@ -30,20 +30,21 @@ namespace GradingSystem.DAO
             }
         }
 
-        public static Boolean updateCourse(int cCode, string cName, int credit_hours)
+        public static Boolean updateSemester_Year(int semester_id, int semester_code, string year)
         {
             GradingSys_DataClassesDataContext db = new GradingSys_DataClassesDataContext();
-
-            var query = from c in db.Courses 
-                        where c.Course_code == cCode
-                        select c;
+            var query = from sem in db.Semester_Years
+                        where sem.Semester_id == semester_id
+                        select sem;
 
             // Execute the query, and change the column values
             // you want to change.
-            foreach (Course c in query)
+            foreach (Semester_Year sem in query)
             {
-                c.Credit_hours = credit_hours;
+                sem.Semester_code = semester_code;
+                sem.Year = year;
             }
+
             // Submit the changes to the database.
             try
             {
@@ -57,17 +58,17 @@ namespace GradingSystem.DAO
             }
         }
 
-        public static Boolean deleteCourse(int cCode)
+        public static Boolean deleteSemester_Year(int semester_id)
         {
             GradingSys_DataClassesDataContext db = new GradingSys_DataClassesDataContext();
 
-            var deleteQuery = from c in db.Courses
-                              where c.Course_code == cCode
-                              select c;
+            var deleteQuery = from sem in db.Semester_Years
+                              where sem.Semester_id == semester_id
+                              select sem;
 
-            foreach (var c in deleteQuery)
+            foreach (var sem in deleteQuery)
             {
-                db.Courses.DeleteOnSubmit(c);
+                db.Semester_Years.DeleteOnSubmit(sem);
             }
 
             try
@@ -83,12 +84,12 @@ namespace GradingSystem.DAO
             }
         }
 
-        public static List<Course> selectAll()
+        public static List<Semester_Year> selectAll()
         {
             GradingSys_DataClassesDataContext db = new GradingSys_DataClassesDataContext();
-            var query = from course in db.Courses
-                        select course;
-            return query.ToList<Course>();
+            var query = from Semester_Year in db.Semester_Years
+                        select Semester_Year;
+            return query.ToList<Semester_Year>();
         }
     }
 }
