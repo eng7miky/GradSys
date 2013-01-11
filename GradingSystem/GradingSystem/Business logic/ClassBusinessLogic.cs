@@ -8,15 +8,15 @@ namespace GradingSystem.Business_logic
 {
     class ClassBusinessLogic
     {
-        public static Boolean addClass(int cCode, int semester_id, int max_enrollment, int enrollment, DateTime Class_time, int prof_id)
+        public static Boolean addClass(int cCode, int semester_id, int max_enrollment, int enrollment, DateTime Class_time)
         {
-            Boolean success = ClassDAO.addClass(cCode, semester_id, max_enrollment, enrollment, Class_time, prof_id);
+            Boolean success = ClassDAO.addClass(cCode, semester_id, max_enrollment, enrollment, Class_time);
             return success;
         }
 
-        public static Boolean updateClass(int cCode, int semester_id, int max_enrollment, int enrollment, DateTime Class_time, int prof_id)
+        public static Boolean updateClass(int cCode, int semester_id, int max_enrollment, int enrollment, DateTime Class_time)
         {
-            Boolean success = ClassDAO.updateClass(cCode, semester_id, max_enrollment, enrollment, Class_time, prof_id);
+            Boolean success = ClassDAO.updateClass(cCode, semester_id, max_enrollment, enrollment, Class_time);
             return success;
         }
 
@@ -31,9 +31,5 @@ namespace GradingSystem.Business_logic
             return ClassDAO.selectAll();
         }
 
-        public static List<Class> getClassesOfProfessor(int semester_id, int prof_id)
-        {
-            return ClassDAO.getClassesOfProfessor(semester_id, prof_id);
-        }
     }
 }

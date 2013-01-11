@@ -14,7 +14,7 @@ namespace GradingSystem.DAO
             {
                 Course_code = cCode,
                 Course_name = cName,
-                Credit_hours = credit_hours,
+                Credit_hours = credit_hours
             };
             db.Courses.InsertOnSubmit(course);
             // Submit the change to the database.

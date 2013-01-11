@@ -7,7 +7,7 @@ namespace GradingSystem.DAO
 {
     class ClassDAO
     {
-        public static Boolean addClass(int cCode, int semester_id, int max_enrollment, int enrollment, DateTime Class_time, int prof_id)
+        public static Boolean addClass(int cCode, int semester_id, int max_enrollment, int enrollment, DateTime Class_time)
         {
             GradingSys_DataClassesDataContext db = new GradingSys_DataClassesDataContext();
             Class classObj = new Class
@@ -17,7 +17,6 @@ namespace GradingSystem.DAO
                 Max_enrollment = max_enrollment,
                 Enrollment = enrollment,
                 Class_time = Class_time,
-                Professor_id = prof_id
             };
             db.Classes.InsertOnSubmit(classObj);
             // Submit the change to the database.
@@ -33,7 +32,7 @@ namespace GradingSystem.DAO
             }
         }
 
-        public static Boolean updateClass(int cCode, int semester_id, int max_enrollment, int enrollment, DateTime Class_time, int prof_id)
+        public static Boolean updateClass(int cCode, int semester_id, int max_enrollment, int enrollment, DateTime Class_time)
         {
             GradingSys_DataClassesDataContext db = new GradingSys_DataClassesDataContext();
 
@@ -48,7 +47,6 @@ namespace GradingSystem.DAO
                 c.Max_enrollment = max_enrollment;
                 c.Enrollment = enrollment;
                 c.Class_time = Class_time;
-                c.Professor_id = prof_id;
             }
 
             // Submit the changes to the database.
@@ -94,15 +92,6 @@ namespace GradingSystem.DAO
         {
             GradingSys_DataClassesDataContext db = new GradingSys_DataClassesDataContext();
             var query = from class1 in db.Classes
-                        select class1;
-            return query.ToList<Class>();
-        }
-
-        public static List<Class> getClassesOfProfessor(int semester_id, int prof_id)
-        {
-            GradingSys_DataClassesDataContext db = new GradingSys_DataClassesDataContext();
-            var query = from class1 in db.Classes
-                        where class1.Semester_id == semester_id && class1.Professor_id == prof_id
                         select class1;
             return query.ToList<Class>();
         }

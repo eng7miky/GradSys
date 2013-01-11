@@ -25,17 +25,5 @@ namespace GradingSystem.Business_logic
             Boolean success = EnrollmentDAO.unregisterStudent(cCode, semester_id, student_id);
             return success;
         }
-
-        public static List<Student> getStudentsOFClass(int cCode, int semester_id)
-        {
-            List<Student> students = EnrollmentDAO.getStudentsOFClass(cCode, semester_id);
-            return students;
-        }
-
-        public static List<GradingSystem.DAO.EnrollmentDAO.Student_Grades> getStudentsGradesOFClass(int cCode, int semester_id)
-        {
-            List<GradingSystem.DAO.EnrollmentDAO.Student_Grades> students = EnrollmentDAO.getStudentsGradesOFClass(cCode, semester_id);
-            return students;
-        }
     }
 }

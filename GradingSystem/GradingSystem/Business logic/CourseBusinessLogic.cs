@@ -8,13 +8,13 @@ namespace GradingSystem.Business_logic
 {
     class CourseBusinessLogic
     {
-        public static Boolean addCourse(int cCode, string cName, int credit_hours)
+        public static Boolean addCourse(int cCode, string cName, int credit_hours, int prof_id)
         {
             Boolean success = CourseDAO.addCourse(cCode, cName, credit_hours);
             return success;
         }
 
-        public static Boolean updateCourse(int cCode, string cName, int credit_hours)
+        public static Boolean updateCourse(int cCode, string cName, int credit_hours, int prof_id)
         {
             Boolean success = CourseDAO.updateCourse(cCode, cName, credit_hours);
             return success;
