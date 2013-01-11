@@ -7,7 +7,7 @@ namespace GradingSystem.DAO
 {
     class CourseDAO
     {
-        public static Boolean addCourse(int cCode, string cName, int credit_hours, int prof_id)
+        public static Boolean addCourse(int cCode, string cName, int credit_hours)
         {
             GradingSys_DataClassesDataContext db = new GradingSys_DataClassesDataContext();
             Course course = new Course
@@ -15,7 +15,6 @@ namespace GradingSystem.DAO
                 Course_code = cCode,
                 Course_name = cName,
                 Credit_hours = credit_hours,
-                Professor_id = prof_id
             };
             db.Courses.InsertOnSubmit(course);
             // Submit the change to the database.
@@ -31,7 +30,7 @@ namespace GradingSystem.DAO
             }
         }
 
-        public static Boolean updateCourse(int cCode, string cName, int credit_hours, int prof_id)
+        public static Boolean updateCourse(int cCode, string cName, int credit_hours)
         {
             GradingSys_DataClassesDataContext db = new GradingSys_DataClassesDataContext();
 
@@ -44,7 +43,6 @@ namespace GradingSystem.DAO
             foreach (Course c in query)
             {
                 c.Credit_hours = credit_hours;
-                c.Professor_id = prof_id;
             }
             // Submit the changes to the database.
             try
