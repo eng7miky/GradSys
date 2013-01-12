@@ -407,43 +407,6 @@ namespace GradingSystem
 		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Professor_Class", Storage="_Professor", ThisKey="Professor_id", OtherKey="Professor_id", IsForeignKey=true)]
 		public Professor Professor
-<<<<<<< HEAD
-=======
-		{
-			get
-			{
-				return this._Professor.Entity;
-			}
-			set
-			{
-				Professor previousValue = this._Professor.Entity;
-				if (((previousValue != value) 
-							|| (this._Professor.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Professor.Entity = null;
-						previousValue.Classes.Remove(this);
-					}
-					this._Professor.Entity = value;
-					if ((value != null))
-					{
-						value.Classes.Add(this);
-						this._Professor_id = value.Professor_id;
-					}
-					else
-					{
-						this._Professor_id = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Professor");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Semester_Year_Class", Storage="_Semester_Year", ThisKey="Semester_id", OtherKey="Semester_id", IsForeignKey=true)]
-		public Semester_Year Semester_Year
->>>>>>> 738da0d7c009aa68fd98566ec2f556838ae7787f
 		{
 			get
 			{
