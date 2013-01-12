@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="GradingSystem" Class="GradingSys_DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=PETER-PC\SQLEXPRESS;Initial Catalog=GradingSystem;Integrated Security=True" SettingsObjectName="GradingSystem.Properties.Settings" SettingsPropertyName="GradingSystemConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=PETER-PC\SQLEXPRESS;Initial Catalog=GradingSystem;Integrated Security=True" SettingsObjectName="GradingSystem.Properties.Settings" SettingsPropertyName="GradingSystemConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Class" Member="Classes">
     <Type Name="Class">
       <Column Name="Course_code" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -24,7 +24,7 @@
   </Table>
   <Table Name="dbo.Department" Member="Departments">
     <Type Name="Department">
-      <Column Name="Dept_no" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Dept_no" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Dept_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="location" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Association Name="Department_Professor" Member="Professors" ThisKey="Dept_no" OtherKey="Dept_no" Type="Professor" />
@@ -69,14 +69,14 @@
   </Table>
   <Table Name="dbo.Semester" Member="Semesters">
     <Type Name="Semester">
-      <Column Name="Semester_code" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Semester_code" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Semester_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Association Name="Semester_Semester_Year" Member="Semester_Years" ThisKey="Semester_code" OtherKey="Semester_code" Type="Semester_Year" />
     </Type>
   </Table>
   <Table Name="dbo.Semester_Year" Member="Semester_Years">
     <Type Name="Semester_Year">
-      <Column Name="Semester_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Semester_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Semester_code" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Year" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
       <Association Name="Semester_Year_Class" Member="Classes" ThisKey="Semester_id" OtherKey="Semester_id" Type="Class" />
@@ -85,7 +85,7 @@
   </Table>
   <Table Name="dbo.Student" Member="Students">
     <Type Name="Student">
-      <Column Name="Student_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Student_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="First_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Last_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Address" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />

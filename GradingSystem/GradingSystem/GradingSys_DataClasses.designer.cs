@@ -63,7 +63,7 @@ namespace GradingSystem
     #endregion
 		
 		public GradingSys_DataClassesDataContext() : 
-				base(global::GradingSystem.Properties.Settings.Default.GradingSystemConnectionString, mappingSource)
+				base(global::GradingSystem.Properties.Settings.Default.GradingSystemConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -679,7 +679,7 @@ namespace GradingSystem
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dept_no", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dept_no", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int Dept_no
 		{
 			get
@@ -1610,7 +1610,7 @@ namespace GradingSystem
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Semester_code", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Semester_code", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int Semester_code
 		{
 			get
@@ -1731,7 +1731,7 @@ namespace GradingSystem
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Semester_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Semester_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int Semester_id
 		{
 			get
@@ -1929,7 +1929,7 @@ namespace GradingSystem
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Student_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Student_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int Student_id
 		{
 			get
