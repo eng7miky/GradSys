@@ -31,5 +31,10 @@ namespace GradingSystem
             this.mainForm.Show();
             this.Hide();
         }
+
+        private void studRegisterBtn_Click(object sender, EventArgs e)
+        {
+            this.registrationPanel.Visible = true;
+        }
     }
 }

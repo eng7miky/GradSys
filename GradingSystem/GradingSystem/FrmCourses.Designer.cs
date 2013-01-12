@@ -36,6 +36,7 @@
             this.coursenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.credithoursDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.professoridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            
             this.btnBack = new System.Windows.Forms.Button();
             this.courseBusinessLogicBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -51,8 +52,7 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.coursecodeDataGridViewTextBoxColumn,
             this.coursenameDataGridViewTextBoxColumn,
-            this.credithoursDataGridViewTextBoxColumn,
-            this.professoridDataGridViewTextBoxColumn});
+            this.credithoursDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.courseBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 44);
             this.dataGridView1.Name = "dataGridView1";

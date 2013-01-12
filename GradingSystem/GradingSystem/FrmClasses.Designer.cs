@@ -30,28 +30,24 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtMaxEnroll = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.classBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.courseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.semesterBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.coursecodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.semesteridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.maxenrollmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.enrollmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.classBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnAddClass = new System.Windows.Forms.Button();
+            this.txtMaxEnroll = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.classBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.semesterBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.classBindingSource)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -63,6 +59,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(577, 395);
             this.panel1.TabIndex = 0;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.DataSource = this.classBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(57, 153);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(446, 239);
+            this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.RowDividerDoubleClick += new System.Windows.Forms.DataGridViewRowDividerDoubleClickEventHandler(this.dataGridView1_RowDividerDoubleClick);
             // 
             // groupBox1
             // 
@@ -81,22 +89,30 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Classes";
             // 
-            // comboBox1
+            // btnAddClass
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(114, 49);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 0;
+            this.btnAddClass.Location = new System.Drawing.Point(489, 117);
+            this.btnAddClass.Name = "btnAddClass";
+            this.btnAddClass.Size = new System.Drawing.Size(75, 23);
+            this.btnAddClass.TabIndex = 6;
+            this.btnAddClass.Text = "Add";
+            this.btnAddClass.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // txtMaxEnroll
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 49);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Course";
+            this.txtMaxEnroll.Location = new System.Drawing.Point(114, 100);
+            this.txtMaxEnroll.Name = "txtMaxEnroll";
+            this.txtMaxEnroll.Size = new System.Drawing.Size(121, 20);
+            this.txtMaxEnroll.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(21, 107);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(64, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Max. Enroll.";
             // 
             // label2
             // 
@@ -115,82 +131,22 @@
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
             this.comboBox2.TabIndex = 2;
             // 
-            // label3
+            // label1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 107);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Max. Enroll.";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(21, 49);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Course";
             // 
-            // txtMaxEnroll
+            // comboBox1
             // 
-            this.txtMaxEnroll.Location = new System.Drawing.Point(114, 100);
-            this.txtMaxEnroll.Name = "txtMaxEnroll";
-            this.txtMaxEnroll.Size = new System.Drawing.Size(121, 20);
-            this.txtMaxEnroll.TabIndex = 5;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.coursecodeDataGridViewTextBoxColumn,
-            this.semesteridDataGridViewTextBoxColumn,
-            this.maxenrollmentDataGridViewTextBoxColumn,
-            this.enrollmentDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.classBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(57, 153);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(446, 239);
-            this.dataGridView1.TabIndex = 2;
-            this.dataGridView1.RowDividerDoubleClick += new System.Windows.Forms.DataGridViewRowDividerDoubleClickEventHandler(this.dataGridView1_RowDividerDoubleClick);
-
-            // 
-            // coursecodeDataGridViewTextBoxColumn
-            // 
-            this.coursecodeDataGridViewTextBoxColumn.DataPropertyName = "Course_code";
-            this.coursecodeDataGridViewTextBoxColumn.DataSource = this.courseBindingSource;
-            this.coursecodeDataGridViewTextBoxColumn.DisplayMember = "Course_name";
-            this.coursecodeDataGridViewTextBoxColumn.HeaderText = "Course_code";
-            this.coursecodeDataGridViewTextBoxColumn.Name = "coursecodeDataGridViewTextBoxColumn";
-            this.coursecodeDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.coursecodeDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.coursecodeDataGridViewTextBoxColumn.ValueMember = "Course_code";
-            // 
-            // semesteridDataGridViewTextBoxColumn
-            // 
-            this.semesteridDataGridViewTextBoxColumn.DataPropertyName = "Semester_id";
-            this.semesteridDataGridViewTextBoxColumn.DataSource = this.semesterBindingSource;
-            this.semesteridDataGridViewTextBoxColumn.DisplayMember = "Semester_name";
-            this.semesteridDataGridViewTextBoxColumn.HeaderText = "Semester_id";
-            this.semesteridDataGridViewTextBoxColumn.Name = "semesteridDataGridViewTextBoxColumn";
-            this.semesteridDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.semesteridDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.semesteridDataGridViewTextBoxColumn.ValueMember = "Semester_code";
-            // 
-            // maxenrollmentDataGridViewTextBoxColumn
-            // 
-            this.maxenrollmentDataGridViewTextBoxColumn.DataPropertyName = "Max_enrollment";
-            this.maxenrollmentDataGridViewTextBoxColumn.HeaderText = "Max_enrollment";
-            this.maxenrollmentDataGridViewTextBoxColumn.Name = "maxenrollmentDataGridViewTextBoxColumn";
-            // 
-            // enrollmentDataGridViewTextBoxColumn
-            // 
-            this.enrollmentDataGridViewTextBoxColumn.DataPropertyName = "Enrollment";
-            this.enrollmentDataGridViewTextBoxColumn.HeaderText = "Enrollment";
-            this.enrollmentDataGridViewTextBoxColumn.Name = "enrollmentDataGridViewTextBoxColumn";
-            // 
-            // btnAddClass
-            // 
-            this.btnAddClass.Location = new System.Drawing.Point(489, 117);
-            this.btnAddClass.Name = "btnAddClass";
-            this.btnAddClass.Size = new System.Drawing.Size(75, 23);
-            this.btnAddClass.TabIndex = 6;
-            this.btnAddClass.Text = "Add";
-            this.btnAddClass.UseVisualStyleBackColor = true;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(114, 49);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 0;
             // 
             // FrmClasses
             // 
@@ -201,12 +157,12 @@
             this.Name = "FrmClasses";
             this.Text = "FrmClasses";
             this.panel1.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.classBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.semesterBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.classBindingSource)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
