@@ -27,7 +27,7 @@ namespace GradingSystem
             // 
             // semesterBindingSource
             // 
-            this.semesterBindingSource.DataSource = typeof(GradingSystem.Semester);
+            this.semesterBindingSource.DataSource = Semester_YearBusinessLogic.selectAll();
            
             this.mainForm = mainForm;
         }
