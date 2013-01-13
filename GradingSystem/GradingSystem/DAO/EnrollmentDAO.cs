@@ -102,6 +102,18 @@ namespace GradingSystem.DAO
 
         }
 
+        public static List<Enrollment> getEnrollmentsOFClass(int cCode, int semester_id)
+        {
+            GradingSys_DataClassesDataContext db = new GradingSys_DataClassesDataContext();
+            var query = from enroll in db.Enrollments
+                        where enroll.Course_code == cCode && enroll.Semester_id == semester_id
+                        select enroll;
+
+            return query.ToList<Enrollment>();
+
+        }
+
+
         public class Student_Grades 
         {
             public string name { get; set; }

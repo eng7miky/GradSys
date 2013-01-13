@@ -34,6 +34,12 @@ namespace GradingSystem
             this.Hide();
         }
 
+        private void btnGrades_Click(object sender, EventArgs e)
+        {
+            new GradingStudents().Show();
+            this.Hide();
+        }
+
 
     }
 }

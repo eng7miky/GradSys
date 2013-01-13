@@ -62,75 +62,81 @@
         <elementListCompartment Id="53863955-c54d-4282-bff4-b874f5e0009e" absoluteBounds="6.265, 2.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(5.5 : 9.19314697265625); (5.79166666666667 : 9.19314697265625 : JumpStart); (5.95833333333333 : 9.19314697265625 : JumpEnd); (6.25 : 9.19314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 9.19314697265625); (6.25 : 9.19314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/GradingSys_DataClassesDataContext/Course/Course_Class" />
       <nodes>
         <classShapeMoniker Id="ae92ca4c-5e39-4b13-bcf5-3e583aaba2bd" />
         <classShapeMoniker Id="e946bdbd-c4fd-4702-a4f0-76f75d247d73" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 9.23159912109375); (10 : 9.23159912109375); (10 : 7.28049967447917)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.25 : 9.23159912109375); (10 : 9.23159912109375); (10 : 7.28049967447917)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/GradingSys_DataClassesDataContext/Class/Class_Enrollment" />
       <nodes>
         <classShapeMoniker Id="e946bdbd-c4fd-4702-a4f0-76f75d247d73" />
         <classShapeMoniker Id="af3e9e07-76f8-47f1-b6f5-219751800593" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 7.34780110677083); (5.875 : 7.72280110677083); (5.875 : 9.73442460742188); (6.25 : 9.73442460742188)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 7.34780110677083); (5.875 : 7.72280110677083); (5.875 : 9.73442460742188); (6.25 : 9.73442460742188)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/GradingSys_DataClassesDataContext/Professor/Professor_Class" />
       <nodes>
         <classShapeMoniker Id="d5de24e6-6e7d-47de-8f5f-df9ed3e781eb" />
         <classShapeMoniker Id="e946bdbd-c4fd-4702-a4f0-76f75d247d73" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 5.25564697265625); (3.5 : 5.25564697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 5.25564697265625); (3.5 : 5.25564697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/GradingSys_DataClassesDataContext/Department/Department_Professor" />
       <nodes>
         <classShapeMoniker Id="1ef7e02a-71fa-4e3c-986e-0b53c907a199" />
         <classShapeMoniker Id="d5de24e6-6e7d-47de-8f5f-df9ed3e781eb" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 6.19314697265625); (6.25 : 6.19314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 6.19314697265625); (6.25 : 6.19314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/GradingSys_DataClassesDataContext/Professor/Professor_Professor_Phone" />
       <nodes>
         <classShapeMoniker Id="d5de24e6-6e7d-47de-8f5f-df9ed3e781eb" />
         <classShapeMoniker Id="8a09f764-6b31-455c-9f5d-aba6384a953e" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 11.3181469726562); (7.25 : 11.3181469726562); (7.25 : 10.2131982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 11.3181469726562); (7.25 : 11.3181469726562); (7.25 : 10.2131982421875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/GradingSys_DataClassesDataContext/Semester_Year/Semester_Year_Class" />
       <nodes>
         <classShapeMoniker Id="b4669d6d-e1c4-4894-88ce-9622613b55fa" />
         <classShapeMoniker Id="e946bdbd-c4fd-4702-a4f0-76f75d247d73" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 11.3469962565104); (3.5 : 11.3469962565104)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 11.3469962565104); (3.5 : 11.3469962565104)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/GradingSys_DataClassesDataContext/Semester/Semester_Semester_Year" />
       <nodes>
         <classShapeMoniker Id="779c006e-d212-4224-81a2-aea6c0367620" />
         <classShapeMoniker Id="b4669d6d-e1c4-4894-88ce-9622613b55fa" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 4.11464680989583); (10 : 4.11464680989583); (10 : 5.125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 4.11464680989583); (10 : 4.11464680989583); (10 : 5.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/GradingSys_DataClassesDataContext/Student/Student_Enrollment" />
       <nodes>
         <classShapeMoniker Id="23ba2fa7-61e7-4ae3-ae11-2e3171092e24" />
         <classShapeMoniker Id="af3e9e07-76f8-47f1-b6f5-219751800593" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(1.75 : 4.125); (1.75 : 3.1249995); (3.5 : 3.1249995)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(1.34375 : 4.125); (1.34375 : 3.79649933723958); (3.5 : 3.79649933723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/GradingSys_DataClassesDataContext/Department/Department_Student" />
       <nodes>
         <classShapeMoniker Id="1ef7e02a-71fa-4e3c-986e-0b53c907a199" />
         <classShapeMoniker Id="23ba2fa7-61e7-4ae3-ae11-2e3171092e24" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 3.19314697265625); (6.25 : 3.19314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 3.19314697265625); (6.25 : 3.19314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/GradingSys_DataClassesDataContext/Student/Student_Student_Phone" />
       <nodes>
         <classShapeMoniker Id="23ba2fa7-61e7-4ae3-ae11-2e3171092e24" />
         <classShapeMoniker Id="73d9970a-484f-4ed7-8e9c-793377c8f262" />
       </nodes>
     </associationConnector>
+    <classShape Id="c0a58a6b-585c-4229-8282-d375a3f107b6" absoluteBounds="1, 0.625, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/GradingSys_DataClassesDataContext/View_Class_Student" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0db33b96-1312-4722-8de0-c6f6a7cf9980" absoluteBounds="1.0150000000000001, 1.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

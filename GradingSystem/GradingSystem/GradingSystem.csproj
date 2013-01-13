@@ -58,6 +58,7 @@
     <Compile Include="Business logic\Semester_YearBusinessLogic.cs" />
     <Compile Include="Business logic\StudentBusinessLogic.cs" />
     <Compile Include="DAO\ClassDAO.cs" />
+    <Compile Include="DAO\Classes_StudentsDAO.cs" />
     <Compile Include="DAO\CourseDAO.cs" />
     <Compile Include="DAO\DepartmentDAO.cs" />
     <Compile Include="DAO\EnrollmentDAO.cs" />
@@ -99,6 +100,12 @@
     </Compile>
     <Compile Include="FrmStudents.Designer.cs">
       <DependentUpon>FrmStudents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GradingStudents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GradingStudents.Designer.cs">
+      <DependentUpon>GradingStudents.cs</DependentUpon>
     </Compile>
     <Compile Include="GradingSysDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -142,6 +149,9 @@
     <None Include="GradingSys_DataClasses.dbml.layout">
       <DependentUpon>GradingSys_DataClasses.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="GradingStudents.resx">
+      <DependentUpon>GradingStudents.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -159,9 +169,14 @@
     <None Include="Properties\DataSources\Class.datasource" />
     <None Include="Properties\DataSources\Course.datasource" />
     <None Include="Properties\DataSources\Department.datasource" />
+    <None Include="Properties\DataSources\Enrollment.datasource" />
     <None Include="Properties\DataSources\GradingSystem.Business_logic.CourseBusinessLogic.datasource" />
+    <None Include="Properties\DataSources\GradingSystem.Business_logic.EnrollmentBusinessLogic.datasource" />
+    <None Include="Properties\DataSources\GradingSystem.GradingSysDataSetTableAdapters.View_Class_StudentsTableAdapter.datasource" />
+    <None Include="Properties\DataSources\GradingSys_DataClassesDataContext.datasource" />
     <None Include="Properties\DataSources\Professor.datasource" />
     <None Include="Properties\DataSources\Semester.datasource" />
+    <None Include="Properties\DataSources\Semester_Year.datasource" />
     <None Include="Properties\DataSources\Student.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

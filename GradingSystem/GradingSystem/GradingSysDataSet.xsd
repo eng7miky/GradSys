@@ -669,6 +669,28 @@ SELECT Serial, Student_id, Phone_no FROM Student_Phones WHERE (Serial = @Serial)
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="View_Class_StudentsTableAdapter" GeneratorDataComponentClassName="View_Class_StudentsTableAdapter" Name="View_Class_Students" UserDataComponentName="View_Class_StudentsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="GradingSysConnectionString (Settings)" DbObjectName="GradingSys.dbo.View_Class_Students" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT [Full Name], Course_code, [Semester Details], Year_work, Project_marks, Final_exam, Total_marks FROM dbo.View_Class_Students</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Full Name" DataSetColumn="Full Name" />
+              <Mapping SourceColumn="Course_code" DataSetColumn="Course_code" />
+              <Mapping SourceColumn="Semester Details" DataSetColumn="Semester Details" />
+              <Mapping SourceColumn="Year_work" DataSetColumn="Year_work" />
+              <Mapping SourceColumn="Project_marks" DataSetColumn="Project_marks" />
+              <Mapping SourceColumn="Final_exam" DataSetColumn="Final_exam" />
+              <Mapping SourceColumn="Total_marks" DataSetColumn="Total_marks" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -872,6 +894,31 @@ SELECT Serial, Student_id, Phone_no FROM Student_Phones WHERE (Serial = @Serial)
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="View_Class_Students" msprop:Generator_TableClassName="View_Class_StudentsDataTable" msprop:Generator_TableVarName="tableView_Class_Students" msprop:Generator_TablePropName="View_Class_Students" msprop:Generator_RowDeletingName="View_Class_StudentsRowDeleting" msprop:Generator_UserTableName="View_Class_Students" msprop:Generator_RowChangingName="View_Class_StudentsRowChanging" msprop:Generator_RowEvHandlerName="View_Class_StudentsRowChangeEventHandler" msprop:Generator_RowDeletedName="View_Class_StudentsRowDeleted" msprop:Generator_RowEvArgName="View_Class_StudentsRowChangeEvent" msprop:Generator_RowChangedName="View_Class_StudentsRowChanged" msprop:Generator_RowClassName="View_Class_StudentsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Full_x0020_Name" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFull_Name" msprop:Generator_ColumnPropNameInRow="Full_Name" msprop:Generator_ColumnPropNameInTable="Full_NameColumn" msprop:Generator_UserColumnName="Full Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Course_code" msprop:Generator_ColumnVarNameInTable="columnCourse_code" msprop:Generator_ColumnPropNameInRow="Course_code" msprop:Generator_ColumnPropNameInTable="Course_codeColumn" msprop:Generator_UserColumnName="Course_code" type="xs:int" />
+              <xs:element name="Semester_x0020_Details" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSemester_Details" msprop:Generator_ColumnPropNameInRow="Semester_Details" msprop:Generator_ColumnPropNameInTable="Semester_DetailsColumn" msprop:Generator_UserColumnName="Semester Details" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="54" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Year_work" msprop:Generator_ColumnVarNameInTable="columnYear_work" msprop:Generator_ColumnPropNameInRow="Year_work" msprop:Generator_ColumnPropNameInTable="Year_workColumn" msprop:Generator_UserColumnName="Year_work" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Project_marks" msprop:Generator_ColumnVarNameInTable="columnProject_marks" msprop:Generator_ColumnPropNameInRow="Project_marks" msprop:Generator_ColumnPropNameInTable="Project_marksColumn" msprop:Generator_UserColumnName="Project_marks" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Final_exam" msprop:Generator_ColumnVarNameInTable="columnFinal_exam" msprop:Generator_ColumnPropNameInRow="Final_exam" msprop:Generator_ColumnPropNameInTable="Final_examColumn" msprop:Generator_UserColumnName="Final_exam" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Total_marks" msprop:Generator_ColumnVarNameInTable="columnTotal_marks" msprop:Generator_ColumnPropNameInRow="Total_marks" msprop:Generator_ColumnPropNameInTable="Total_marksColumn" msprop:Generator_UserColumnName="Total_marks" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -922,16 +969,16 @@ SELECT Serial, Student_id, Phone_no FROM Student_Phones WHERE (Serial = @Serial)
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_Class_Course" msdata:parent="Course" msdata:child="Class" msdata:parentkey="Course_code" msdata:childkey="Course_code" msprop:Generator_UserChildTable="Class" msprop:Generator_ChildPropName="GetClassRows" msprop:Generator_ParentPropName="CourseRow" msprop:Generator_UserRelationName="FK_Class_Course" msprop:Generator_RelationVarName="relationFK_Class_Course" msprop:Generator_UserParentTable="Course" />
-      <msdata:Relationship name="FK_Class_Professor" msdata:parent="Professor" msdata:child="Class" msdata:parentkey="Professor_id" msdata:childkey="Professor_id" msprop:Generator_UserChildTable="Class" msprop:Generator_ChildPropName="GetClassRows" msprop:Generator_ParentPropName="ProfessorRow" msprop:Generator_UserRelationName="FK_Class_Professor" msprop:Generator_RelationVarName="relationFK_Class_Professor" msprop:Generator_UserParentTable="Professor" />
-      <msdata:Relationship name="FK_Class_Semester_Year" msdata:parent="Semester_Year" msdata:child="Class" msdata:parentkey="Semester_id" msdata:childkey="Semester_id" msprop:Generator_UserChildTable="Class" msprop:Generator_ChildPropName="GetClassRows" msprop:Generator_ParentPropName="Semester_YearRow" msprop:Generator_UserRelationName="FK_Class_Semester_Year" msprop:Generator_RelationVarName="relationFK_Class_Semester_Year" msprop:Generator_UserParentTable="Semester_Year" />
-      <msdata:Relationship name="FK_Enrollment_Class" msdata:parent="Class" msdata:child="Enrollment" msdata:parentkey="Course_code Semester_id" msdata:childkey="Course_code Semester_id" msprop:Generator_UserChildTable="Enrollment" msprop:Generator_ChildPropName="GetEnrollmentRows" msprop:Generator_ParentPropName="ClassRowParent" msprop:Generator_UserRelationName="FK_Enrollment_Class" msprop:Generator_RelationVarName="relationFK_Enrollment_Class" msprop:Generator_UserParentTable="Class" />
-      <msdata:Relationship name="FK_Enrollment_Student" msdata:parent="Student" msdata:child="Enrollment" msdata:parentkey="Student_id" msdata:childkey="Student_id" msprop:Generator_UserChildTable="Enrollment" msprop:Generator_ChildPropName="GetEnrollmentRows" msprop:Generator_ParentPropName="StudentRow" msprop:Generator_UserRelationName="FK_Enrollment_Student" msprop:Generator_RelationVarName="relationFK_Enrollment_Student" msprop:Generator_UserParentTable="Student" />
-      <msdata:Relationship name="FK_Professor_Department" msdata:parent="Department" msdata:child="Professor" msdata:parentkey="Dept_no" msdata:childkey="Dept_no" msprop:Generator_UserChildTable="Professor" msprop:Generator_ChildPropName="GetProfessorRows" msprop:Generator_ParentPropName="DepartmentRow" msprop:Generator_UserRelationName="FK_Professor_Department" msprop:Generator_RelationVarName="relationFK_Professor_Department" msprop:Generator_UserParentTable="Department" />
-      <msdata:Relationship name="FK_Professor_Phones_Professor" msdata:parent="Professor" msdata:child="Professor_Phones" msdata:parentkey="Professor_id" msdata:childkey="Professor_id" msprop:Generator_UserChildTable="Professor_Phones" msprop:Generator_ChildPropName="GetProfessor_PhonesRows" msprop:Generator_ParentPropName="ProfessorRow" msprop:Generator_UserRelationName="FK_Professor_Phones_Professor" msprop:Generator_RelationVarName="relationFK_Professor_Phones_Professor" msprop:Generator_UserParentTable="Professor" />
-      <msdata:Relationship name="FK_Semester_Year_Semester" msdata:parent="Semester" msdata:child="Semester_Year" msdata:parentkey="Semester_code" msdata:childkey="Semester_code" msprop:Generator_UserChildTable="Semester_Year" msprop:Generator_ChildPropName="GetSemester_YearRows" msprop:Generator_ParentPropName="SemesterRow" msprop:Generator_UserRelationName="FK_Semester_Year_Semester" msprop:Generator_RelationVarName="relationFK_Semester_Year_Semester" msprop:Generator_UserParentTable="Semester" />
-      <msdata:Relationship name="FK_Student_Department" msdata:parent="Department" msdata:child="Student" msdata:parentkey="Dept_no" msdata:childkey="Dept_no" msprop:Generator_UserChildTable="Student" msprop:Generator_ChildPropName="GetStudentRows" msprop:Generator_ParentPropName="DepartmentRow" msprop:Generator_UserRelationName="FK_Student_Department" msprop:Generator_RelationVarName="relationFK_Student_Department" msprop:Generator_UserParentTable="Department" />
-      <msdata:Relationship name="FK_Student_Phones_Student" msdata:parent="Student" msdata:child="Student_Phones" msdata:parentkey="Student_id" msdata:childkey="Student_id" msprop:Generator_UserChildTable="Student_Phones" msprop:Generator_ChildPropName="GetStudent_PhonesRows" msprop:Generator_ParentPropName="StudentRow" msprop:Generator_UserRelationName="FK_Student_Phones_Student" msprop:Generator_RelationVarName="relationFK_Student_Phones_Student" msprop:Generator_UserParentTable="Student" />
+      <msdata:Relationship name="FK_Class_Course" msdata:parent="Course" msdata:child="Class" msdata:parentkey="Course_code" msdata:childkey="Course_code" msprop:Generator_UserChildTable="Class" msprop:Generator_ChildPropName="GetClassRows" msprop:Generator_UserParentTable="Course" msprop:Generator_UserRelationName="FK_Class_Course" msprop:Generator_RelationVarName="relationFK_Class_Course" msprop:Generator_ParentPropName="CourseRow" />
+      <msdata:Relationship name="FK_Class_Professor" msdata:parent="Professor" msdata:child="Class" msdata:parentkey="Professor_id" msdata:childkey="Professor_id" msprop:Generator_UserChildTable="Class" msprop:Generator_ChildPropName="GetClassRows" msprop:Generator_UserParentTable="Professor" msprop:Generator_UserRelationName="FK_Class_Professor" msprop:Generator_RelationVarName="relationFK_Class_Professor" msprop:Generator_ParentPropName="ProfessorRow" />
+      <msdata:Relationship name="FK_Class_Semester_Year" msdata:parent="Semester_Year" msdata:child="Class" msdata:parentkey="Semester_id" msdata:childkey="Semester_id" msprop:Generator_UserChildTable="Class" msprop:Generator_ChildPropName="GetClassRows" msprop:Generator_UserParentTable="Semester_Year" msprop:Generator_UserRelationName="FK_Class_Semester_Year" msprop:Generator_RelationVarName="relationFK_Class_Semester_Year" msprop:Generator_ParentPropName="Semester_YearRow" />
+      <msdata:Relationship name="FK_Enrollment_Class" msdata:parent="Class" msdata:child="Enrollment" msdata:parentkey="Course_code Semester_id" msdata:childkey="Course_code Semester_id" msprop:Generator_UserChildTable="Enrollment" msprop:Generator_ChildPropName="GetEnrollmentRows" msprop:Generator_UserParentTable="Class" msprop:Generator_UserRelationName="FK_Enrollment_Class" msprop:Generator_RelationVarName="relationFK_Enrollment_Class" msprop:Generator_ParentPropName="ClassRowParent" />
+      <msdata:Relationship name="FK_Enrollment_Student" msdata:parent="Student" msdata:child="Enrollment" msdata:parentkey="Student_id" msdata:childkey="Student_id" msprop:Generator_UserChildTable="Enrollment" msprop:Generator_ChildPropName="GetEnrollmentRows" msprop:Generator_UserParentTable="Student" msprop:Generator_UserRelationName="FK_Enrollment_Student" msprop:Generator_RelationVarName="relationFK_Enrollment_Student" msprop:Generator_ParentPropName="StudentRow" />
+      <msdata:Relationship name="FK_Professor_Department" msdata:parent="Department" msdata:child="Professor" msdata:parentkey="Dept_no" msdata:childkey="Dept_no" msprop:Generator_UserChildTable="Professor" msprop:Generator_ChildPropName="GetProfessorRows" msprop:Generator_UserParentTable="Department" msprop:Generator_UserRelationName="FK_Professor_Department" msprop:Generator_RelationVarName="relationFK_Professor_Department" msprop:Generator_ParentPropName="DepartmentRow" />
+      <msdata:Relationship name="FK_Professor_Phones_Professor" msdata:parent="Professor" msdata:child="Professor_Phones" msdata:parentkey="Professor_id" msdata:childkey="Professor_id" msprop:Generator_UserChildTable="Professor_Phones" msprop:Generator_ChildPropName="GetProfessor_PhonesRows" msprop:Generator_UserParentTable="Professor" msprop:Generator_UserRelationName="FK_Professor_Phones_Professor" msprop:Generator_RelationVarName="relationFK_Professor_Phones_Professor" msprop:Generator_ParentPropName="ProfessorRow" />
+      <msdata:Relationship name="FK_Semester_Year_Semester" msdata:parent="Semester" msdata:child="Semester_Year" msdata:parentkey="Semester_code" msdata:childkey="Semester_code" msprop:Generator_UserChildTable="Semester_Year" msprop:Generator_ChildPropName="GetSemester_YearRows" msprop:Generator_UserParentTable="Semester" msprop:Generator_UserRelationName="FK_Semester_Year_Semester" msprop:Generator_RelationVarName="relationFK_Semester_Year_Semester" msprop:Generator_ParentPropName="SemesterRow" />
+      <msdata:Relationship name="FK_Student_Department" msdata:parent="Department" msdata:child="Student" msdata:parentkey="Dept_no" msdata:childkey="Dept_no" msprop:Generator_UserChildTable="Student" msprop:Generator_ChildPropName="GetStudentRows" msprop:Generator_UserParentTable="Department" msprop:Generator_UserRelationName="FK_Student_Department" msprop:Generator_RelationVarName="relationFK_Student_Department" msprop:Generator_ParentPropName="DepartmentRow" />
+      <msdata:Relationship name="FK_Student_Phones_Student" msdata:parent="Student" msdata:child="Student_Phones" msdata:parentkey="Student_id" msdata:childkey="Student_id" msprop:Generator_UserChildTable="Student_Phones" msprop:Generator_ChildPropName="GetStudent_PhonesRows" msprop:Generator_UserParentTable="Student" msprop:Generator_UserRelationName="FK_Student_Phones_Student" msprop:Generator_RelationVarName="relationFK_Student_Phones_Student" msprop:Generator_ParentPropName="StudentRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

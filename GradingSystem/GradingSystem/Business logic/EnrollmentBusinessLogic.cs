@@ -37,5 +37,12 @@ namespace GradingSystem.Business_logic
             List<GradingSystem.DAO.EnrollmentDAO.Student_Grades> students = EnrollmentDAO.getStudentsGradesOFClass(cCode, semester_id);
             return students;
         }
+
+        public static List<Enrollment> getEnrollmentsOFClass(int cCode, int semester_id)
+        {
+            List<Enrollment> enrollements = EnrollmentDAO.getEnrollmentsOFClass(cCode, semester_id);
+            return enrollements;
+        }
+ 
     }
 }
