@@ -26,8 +26,8 @@ namespace GradingSystem.Business_logic
         public static List<Semester_Year> selectAll()
         {
             GradingSys_DataClassesDataContext db = new GradingSys_DataClassesDataContext();
-            var query = from Semester_Year in db.Semester_Years
-                        select Semester_Year;
+            var query = from sem_year in db.Semester_Years
+                        select sem_year;
             return query.ToList<Semester_Year>();
         }
     }
