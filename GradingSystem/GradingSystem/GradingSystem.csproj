@@ -172,6 +172,7 @@
     <None Include="Properties\DataSources\Enrollment.datasource" />
     <None Include="Properties\DataSources\GradingSystem.Business_logic.CourseBusinessLogic.datasource" />
     <None Include="Properties\DataSources\GradingSystem.Business_logic.EnrollmentBusinessLogic.datasource" />
+    <None Include="Properties\DataSources\GradingSystem.DAO.EnrollmentDAO+Student_Grades.datasource" />
     <None Include="Properties\DataSources\GradingSystem.GradingSysDataSetTableAdapters.View_Class_StudentsTableAdapter.datasource" />
     <None Include="Properties\DataSources\GradingSys_DataClassesDataContext.datasource" />
     <None Include="Properties\DataSources\Professor.datasource" />

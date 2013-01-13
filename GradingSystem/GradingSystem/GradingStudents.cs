@@ -34,7 +34,7 @@ namespace GradingSystem
             if (cbxCourses.SelectedValue != null && cbxSemester.SelectedValue != null)
             {
                 dataGridView1.Visible = true;
-                dataGridView1.DataSource = EnrollmentBusinessLogic.getEnrollmentsOFClass(int.Parse(cbxCourses.SelectedValue.ToString()), int.Parse(cbxSemester.SelectedValue.ToString()));
+                dataGridView1.DataSource = EnrollmentBusinessLogic.getStudentsGradesOFClass(int.Parse(cbxCourses.SelectedValue.ToString()), int.Parse(cbxSemester.SelectedValue.ToString()));
             }
         }
 
