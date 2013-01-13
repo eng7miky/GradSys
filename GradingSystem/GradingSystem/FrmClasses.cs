@@ -28,6 +28,12 @@ namespace GradingSystem
             // semesterBindingSource
             // 
             this.semesterBindingSource.DataSource = Semester_YearBusinessLogic.selectAll();
+
+            // 
+            // semesterBindingSource
+            // 
+            this.cbxProfessor.DataSource = ProfessorBusinessLogic.selectAll();
+
            
             this.mainForm = mainForm;
         }
@@ -42,6 +48,18 @@ namespace GradingSystem
         {
             this.mainForm.Show();
             this.Hide();
+        }
+
+        private void btnAddClass_Click(object sender, EventArgs e)
+        {
+           bool isInserted =  ClassBusinessLogic.addClass(int.Parse(cbxCourses.SelectedValue.ToString()),int.Parse(cbxSemesters.SelectedValue.ToString()),int.Parse(txtMaxEnroll.Text),0,DateTime.Now,int.Parse(cbxProfessor.SelectedValue.ToString()));
+            if(isInserted){
+
+                lblMsg.Text = "Class inserted successfully";
+                lblMsg.Visible = true;
+              //  dataGridView1.DataSource=null;
+                dataGridView1.DataSource = ClassBusinessLogic.selectAll();
+            }
         }
     }
 }
