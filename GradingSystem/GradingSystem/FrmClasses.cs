@@ -61,5 +61,10 @@ namespace GradingSystem
                 dataGridView1.DataSource = ClassBusinessLogic.selectAll();
             }
         }
+
+        private void dataGridView1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            int x = 0;
+        }
     }
 }

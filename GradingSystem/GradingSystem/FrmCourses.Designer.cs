@@ -30,13 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.courseBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.professorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.coursecodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coursenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.credithoursDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.courseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.professorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.professoridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            
             this.btnBack = new System.Windows.Forms.Button();
             this.courseBusinessLogicBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -58,14 +57,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(443, 150);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // courseBindingSource
-            // 
-            this.courseBindingSource.DataSource = typeof(GradingSystem.Course);
-            // 
-            // professorBindingSource
-            // 
-            this.professorBindingSource.DataSource = typeof(GradingSystem.Professor);
+            this.dataGridView1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridView1_RowsAdded);
             // 
             // coursecodeDataGridViewTextBoxColumn
             // 
@@ -84,6 +76,14 @@
             this.credithoursDataGridViewTextBoxColumn.DataPropertyName = "Credit_hours";
             this.credithoursDataGridViewTextBoxColumn.HeaderText = "Credit_hours";
             this.credithoursDataGridViewTextBoxColumn.Name = "credithoursDataGridViewTextBoxColumn";
+            // 
+            // courseBindingSource
+            // 
+            this.courseBindingSource.DataSource = typeof(GradingSystem.Course);
+            // 
+            // professorBindingSource
+            // 
+            this.professorBindingSource.DataSource = typeof(GradingSystem.Professor);
             // 
             // professoridDataGridViewTextBoxColumn
             // 

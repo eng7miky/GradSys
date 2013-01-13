@@ -95,6 +95,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(446, 239);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.RowDividerDoubleClick += new System.Windows.Forms.DataGridViewRowDividerDoubleClickEventHandler(this.dataGridView1_RowDividerDoubleClick);
+            this.dataGridView1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridView1_RowsAdded);
             // 
             // coursecodeDataGridViewTextBoxColumn
             // 
