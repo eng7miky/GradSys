@@ -34,14 +34,7 @@
             this.classBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.coursecodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.semesteridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.studentidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.yearworkDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.projectmarksDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.finalexamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalmarksDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.enrollmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gradingSysDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gradingSysDataSet = new GradingSystem.GradingSysDataSet();
@@ -50,9 +43,15 @@
             this.enrollmentBusinessLogicBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.cbxSemester = new System.Windows.Forms.ComboBox();
+            this.semesterYearBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.semesterBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnLoadStudents = new System.Windows.Forms.Button();
-            this.semesterYearBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.studentGradesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.yearworkDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.projectmarksDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.finalexamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalmarksDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.classBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -63,8 +62,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gradingSysDataClassesDataContextBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewClassStudentsTableAdapterBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.enrollmentBusinessLogicBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.semesterBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.semesterYearBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.semesterBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentGradesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // cbxCourses
@@ -101,77 +101,20 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.coursecodeDataGridViewTextBoxColumn,
-            this.semesteridDataGridViewTextBoxColumn,
-            this.studentidDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
             this.yearworkDataGridViewTextBoxColumn,
             this.projectmarksDataGridViewTextBoxColumn,
             this.finalexamDataGridViewTextBoxColumn,
             this.totalmarksDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.enrollmentBindingSource;
+            this.dataGridView1.DataSource = this.studentGradesBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(35, 70);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(735, 162);
             this.dataGridView1.TabIndex = 2;
             // 
-            // coursecodeDataGridViewTextBoxColumn
-            // 
-            this.coursecodeDataGridViewTextBoxColumn.DataPropertyName = "Course_code";
-            this.coursecodeDataGridViewTextBoxColumn.DataSource = this.courseBindingSource;
-            this.coursecodeDataGridViewTextBoxColumn.DisplayMember = "Course_name";
-            this.coursecodeDataGridViewTextBoxColumn.HeaderText = "Course_code";
-            this.coursecodeDataGridViewTextBoxColumn.Name = "coursecodeDataGridViewTextBoxColumn";
-            this.coursecodeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.coursecodeDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.coursecodeDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.coursecodeDataGridViewTextBoxColumn.ValueMember = "Course_code";
-            // 
-            // semesteridDataGridViewTextBoxColumn
-            // 
-            this.semesteridDataGridViewTextBoxColumn.DataPropertyName = "Semester_id";
-            this.semesteridDataGridViewTextBoxColumn.HeaderText = "Semester_id";
-            this.semesteridDataGridViewTextBoxColumn.Name = "semesteridDataGridViewTextBoxColumn";
-            this.semesteridDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // studentidDataGridViewTextBoxColumn
-            // 
-            this.studentidDataGridViewTextBoxColumn.DataPropertyName = "Student_id";
-            this.studentidDataGridViewTextBoxColumn.DataSource = this.studentBindingSource;
-            this.studentidDataGridViewTextBoxColumn.DisplayMember = "First_name";
-            this.studentidDataGridViewTextBoxColumn.HeaderText = "Student";
-            this.studentidDataGridViewTextBoxColumn.Name = "studentidDataGridViewTextBoxColumn";
-            this.studentidDataGridViewTextBoxColumn.ReadOnly = true;
-            this.studentidDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.studentidDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.studentidDataGridViewTextBoxColumn.ValueMember = "Student_id";
-            // 
             // studentBindingSource
             // 
             this.studentBindingSource.DataSource = typeof(GradingSystem.Student);
-            // 
-            // yearworkDataGridViewTextBoxColumn
-            // 
-            this.yearworkDataGridViewTextBoxColumn.DataPropertyName = "Year_work";
-            this.yearworkDataGridViewTextBoxColumn.HeaderText = "Year_work";
-            this.yearworkDataGridViewTextBoxColumn.Name = "yearworkDataGridViewTextBoxColumn";
-            // 
-            // projectmarksDataGridViewTextBoxColumn
-            // 
-            this.projectmarksDataGridViewTextBoxColumn.DataPropertyName = "Project_marks";
-            this.projectmarksDataGridViewTextBoxColumn.HeaderText = "Project_marks";
-            this.projectmarksDataGridViewTextBoxColumn.Name = "projectmarksDataGridViewTextBoxColumn";
-            // 
-            // finalexamDataGridViewTextBoxColumn
-            // 
-            this.finalexamDataGridViewTextBoxColumn.DataPropertyName = "Final_exam";
-            this.finalexamDataGridViewTextBoxColumn.HeaderText = "Final_exam";
-            this.finalexamDataGridViewTextBoxColumn.Name = "finalexamDataGridViewTextBoxColumn";
-            // 
-            // totalmarksDataGridViewTextBoxColumn
-            // 
-            this.totalmarksDataGridViewTextBoxColumn.DataPropertyName = "Total_marks";
-            this.totalmarksDataGridViewTextBoxColumn.HeaderText = "Total_marks";
-            this.totalmarksDataGridViewTextBoxColumn.Name = "totalmarksDataGridViewTextBoxColumn";
             // 
             // enrollmentBindingSource
             // 
@@ -219,6 +162,10 @@
             this.cbxSemester.TabIndex = 3;
             this.cbxSemester.ValueMember = "Semester_id";
             // 
+            // semesterYearBindingSource
+            // 
+            this.semesterYearBindingSource.DataSource = typeof(GradingSystem.Semester_Year);
+            // 
             // semesterBindingSource
             // 
             this.semesterBindingSource.DataSource = typeof(GradingSystem.Semester);
@@ -233,9 +180,40 @@
             this.btnLoadStudents.UseVisualStyleBackColor = true;
             this.btnLoadStudents.Click += new System.EventHandler(this.btnLoadStudents_Click);
             // 
-            // semesterYearBindingSource
+            // studentGradesBindingSource
             // 
-            this.semesterYearBindingSource.DataSource = typeof(GradingSystem.Semester_Year);
+            this.studentGradesBindingSource.DataSource = typeof(GradingSystem.DAO.EnrollmentDAO.Student_Grades);
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // yearworkDataGridViewTextBoxColumn
+            // 
+            this.yearworkDataGridViewTextBoxColumn.DataPropertyName = "year_work";
+            this.yearworkDataGridViewTextBoxColumn.HeaderText = "year_work";
+            this.yearworkDataGridViewTextBoxColumn.Name = "yearworkDataGridViewTextBoxColumn";
+            // 
+            // projectmarksDataGridViewTextBoxColumn
+            // 
+            this.projectmarksDataGridViewTextBoxColumn.DataPropertyName = "project_marks";
+            this.projectmarksDataGridViewTextBoxColumn.HeaderText = "project_marks";
+            this.projectmarksDataGridViewTextBoxColumn.Name = "projectmarksDataGridViewTextBoxColumn";
+            // 
+            // finalexamDataGridViewTextBoxColumn
+            // 
+            this.finalexamDataGridViewTextBoxColumn.DataPropertyName = "final_exam";
+            this.finalexamDataGridViewTextBoxColumn.HeaderText = "final_exam";
+            this.finalexamDataGridViewTextBoxColumn.Name = "finalexamDataGridViewTextBoxColumn";
+            // 
+            // totalmarksDataGridViewTextBoxColumn
+            // 
+            this.totalmarksDataGridViewTextBoxColumn.DataPropertyName = "total_marks";
+            this.totalmarksDataGridViewTextBoxColumn.HeaderText = "total_marks";
+            this.totalmarksDataGridViewTextBoxColumn.Name = "totalmarksDataGridViewTextBoxColumn";
             // 
             // GradingStudents
             // 
@@ -260,8 +238,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gradingSysDataClassesDataContextBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewClassStudentsTableAdapterBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.enrollmentBusinessLogicBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.semesterBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.semesterYearBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.semesterBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentGradesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -281,17 +260,16 @@
         private System.Windows.Forms.BindingSource studentBindingSource;
         private System.Windows.Forms.BindingSource enrollmentBusinessLogicBindingSource;
         private System.Windows.Forms.BindingSource courseBindingSource;
-        private System.Windows.Forms.DataGridViewComboBoxColumn coursecodeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn semesteridDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn studentidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn yearworkDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn projectmarksDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn finalexamDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn totalmarksDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbxSemester;
         private System.Windows.Forms.Button btnLoadStudents;
         private System.Windows.Forms.BindingSource semesterBindingSource;
         private System.Windows.Forms.BindingSource semesterYearBindingSource;
+        private System.Windows.Forms.BindingSource studentGradesBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn yearworkDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn projectmarksDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn finalexamDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalmarksDataGridViewTextBoxColumn;
     }
 }
