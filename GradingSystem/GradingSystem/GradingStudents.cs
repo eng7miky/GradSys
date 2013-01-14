@@ -21,7 +21,7 @@ namespace GradingSystem
             //foreach (Class item in classes)
             //{
             dataGridView1.Visible = false;
-            cbxCourses.DataSource = ClassBusinessLogic.selectAll();
+            cbxCourses.DataSource = CourseBusinessLogic.selectAll();
             courseBindingSource.DataSource = CourseBusinessLogic.selectAll();
             studentBindingSource.DataSource = StudentBusinessLogic.selectAll();
             cbxSemester.DataSource = Semester_YearBusinessLogic.selectAll();
