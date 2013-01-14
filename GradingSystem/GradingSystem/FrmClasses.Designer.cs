@@ -42,6 +42,7 @@
             this.semesterYearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.classBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblMsg = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cbxProfessor = new System.Windows.Forms.ComboBox();
             this.professorBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -54,7 +55,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cbxCourses = new System.Windows.Forms.ComboBox();
             this.courseBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lblMsg = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.classBindingSource)).BeginInit();
@@ -90,7 +90,7 @@
             this.professorDataGridViewTextBoxColumn,
             this.semesterYearDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.classBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(57, 153);
+            this.dataGridView1.Location = new System.Drawing.Point(56, 146);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(446, 239);
             this.dataGridView1.TabIndex = 2;
@@ -175,6 +175,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Classes";
             // 
+            // lblMsg
+            // 
+            this.lblMsg.AutoSize = true;
+            this.lblMsg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblMsg.Location = new System.Drawing.Point(6, 127);
+            this.lblMsg.Name = "lblMsg";
+            this.lblMsg.Size = new System.Drawing.Size(0, 13);
+            this.lblMsg.TabIndex = 9;
+            this.lblMsg.Visible = false;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -237,17 +247,17 @@
             // cbxSemesters
             // 
             this.cbxSemesters.DataSource = this.semesterBindingSource;
-            this.cbxSemesters.DisplayMember = "Semester_name";
+            this.cbxSemesters.DisplayMember = "Semester_code";
             this.cbxSemesters.FormattingEnabled = true;
             this.cbxSemesters.Location = new System.Drawing.Point(335, 49);
             this.cbxSemesters.Name = "cbxSemesters";
             this.cbxSemesters.Size = new System.Drawing.Size(121, 21);
             this.cbxSemesters.TabIndex = 2;
-            this.cbxSemesters.ValueMember = "Semester_code";
+            this.cbxSemesters.ValueMember = "Semester_id";
             // 
             // semesterBindingSource
             // 
-            this.semesterBindingSource.DataSource = typeof(GradingSystem.Semester);
+            this.semesterBindingSource.DataSource = typeof(GradingSystem.Semester_Year);
             // 
             // label1
             // 
@@ -272,16 +282,6 @@
             // courseBindingSource
             // 
             this.courseBindingSource.DataSource = typeof(GradingSystem.Course);
-            // 
-            // lblMsg
-            // 
-            this.lblMsg.AutoSize = true;
-            this.lblMsg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblMsg.Location = new System.Drawing.Point(6, 127);
-            this.lblMsg.Name = "lblMsg";
-            this.lblMsg.Size = new System.Drawing.Size(0, 13);
-            this.lblMsg.TabIndex = 9;
-            this.lblMsg.Visible = false;
             // 
             // FrmClasses
             // 
